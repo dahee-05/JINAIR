@@ -1,0 +1,1946 @@
+@import url(./common.scss);
+
+/** 공통 **/
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.booking-avaliability-contents,
+.booking-passenger-contents {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/************************************
+ * BookingDates
+ * 날짜 목록 공통 컴포넌트
+************************************/
+.booking-list-container {
+    position: relative;
+
+    .booking-list-prev,
+    .booking-list-next {
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-top: 0;
+        z-index: 10;
+        background: rgb(193, 193, 193);
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: 0.2s all 0s ease-in-out;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .booking-list-next {
+        right: 0;
+    }
+
+    .booking-list {
+        border-top: 1px solid var(--jinairnav);
+        border-bottom: 1px solid var(--borderlight);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 16px 44px;
+        margin-top: 30px;
+
+        >li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            width: 160px;
+            height: 70px;
+            margin: 0 auto;
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        >li:not(:first-child)::before {
+            content: "|";
+            position: absolute;
+            left: -3px;
+            top: 30%;
+            width: 0;
+            height: 0;
+        }
+
+        >.selected-booking-date {
+            background-color: var(--jinairnav);
+            color: #fff;
+        }
+
+        >li>p {
+            font-size: 14px;
+        }
+
+        >li>p>b {
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+}
+
+/************************************
+ * BookingAvailabilityList - BookingStep
+ * 항공권 선택 페이지 삳단 탭
+************************************/
+.booking-avaliability-wrap {
+    // border: 1px solid red;
+    position: relative;
+}
+
+.booking-step-wrap {
+    width: 100%;
+    padding: 20px 0;
+    color: var(--darkblack);
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+    // position: sticky;
+    // top: 10px;
+    // z-index: 30px;
+
+    >div {
+        width: 1280px;
+        margin: 0 auto;
+        // border: 1px solid red;
+    }
+
+    .booking-step-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        padding-bottom: 20px;
+
+        div:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-right: 6px;
+
+            >span:first-child {
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                font-size: 12px;
+                height: 22px;
+                width: 23px;
+                padding: 0 8px;
+                font-weight: 700;
+                background-color: var(--color-main);
+            }
+
+            div {
+                display: flex;
+                gap: 8px;
+                font-weight: bold;
+
+                span:nth-child(2) {
+                    padding-top: 2px;
+                }
+
+                span:not(:nth-child(2))>span {
+                    font-weight: bold;
+                }
+            }
+
+            >span:last-child {
+                color: rgb(130, 130, 130);
+            }
+        }
+
+        div:last-child {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 10px;
+                font-weight: bold;
+            }
+
+            button {
+                font-size: 12px;
+                border: 1px var(--color-153) solid;
+                border-radius: 4px;
+                padding: 0 8px;
+                background-color: #fff;
+                height: 22px;
+                color: var(--color-153);
+            }
+        }
+    }
+
+    .booking-step-avaliability-bottom {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        // height: auto;
+
+        .booking-step-menu {
+            display: flex;
+            background-color: rgb(239, 239, 239);
+            border-radius: 5px;
+            margin: 0;
+
+            >li {
+                width: 200px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--jinairnav);
+                font-weight: 700;
+                position: relative;
+            }
+
+            >li:not(:first-child)::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 0;
+                height: 0;
+                margin-top: -5px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 7px solid rgb(196, 196, 196);
+            }
+
+            >li:first-child {
+                border-radius: 5px;
+                background-color: var(--color-nav-main);
+                color: #fff;
+            }
+        }
+
+        .booking-step-total {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                margin: 0;
+            }
+
+            p,
+            span {
+                line-height: 20px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            b {
+                font-size: 22px;
+                margin: 0;
+            }
+
+            button {
+                width: 28px;
+                height: 28px;
+                text-align: center;
+                border: none;
+                border-radius: 50%;
+                background-color: var(--color-main);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // font-size: 22px;
+            }
+        }
+    }
+}
+
+
+/************************************
+* BookingAvailabilityList - BookingStep
+* 예매 페이지 삳단 탭
+************************************/
+/* 항공권 선택 상단 */
+.booking-page-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.booking-avaliability-wrap {
+    background-color: rgb(249, 249, 249);
+
+    .booking-avaliability-contents {
+        width: 1280px;
+        margin: 0 auto;
+
+        .booking-section1-container {
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px 24px;
+            background-color: var(--jinairnav);
+            color: #fff;
+
+            .booking-section1-left {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                >span {
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 8px;
+                    width: 45px;
+                    height: 26px;
+                    background: var(--jinairgreen);
+                    color: var(--jinairnav);
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                >div {
+                    position: relative;
+                }
+
+                >div:nth-child(2) {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-weight: 700;
+                }
+
+                >div:not(:nth-child(2)) {
+                    margin-left: 20px;
+                }
+
+                >div:not(:nth-child(2))::before {
+                    content: '';
+                    position: absolute;
+                    left: -20px;
+                    top: 20%;
+                    width: 1px;
+                    height: 16px;
+                    background-color: #fff;
+                    margin-right: 20px;
+                    vertical-align: middle;
+                }
+
+                >div:nth-child(3) {
+                    display: flex;
+                    gap: 5px;
+                }
+
+                >div:last-child {
+                    >span:last-child {
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .booking-section1-right {
+                // border: 1px solid red;
+                background: rgba(255, 255, 255, 0.3);
+                display: flex;
+                align-items: center;
+                height: 22px;
+                border-radius: 5px;
+                font-size: 12px;
+                padding: 0 8px;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .booking-date {
+        .booking-location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            >span:first-child {
+                background-color: var(--jinairgreen);
+                border-radius: 5px;
+                display: flex;
+                height: 28px;
+                width: 45px;
+                align-items: center;
+                justify-content: center;
+                padding: 0 8px;
+                margin-right: 6px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            >div {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font-size: 22px;
+                font-weight: 700;
+
+                >span>span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .booking-select-flight {
+        margin-top: 56px;
+
+        .booking-select-flight-sort {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            gap: 20px;
+            border-bottom: 1px solid var(--borderlight);
+            padding-bottom: 24px;
+
+            >.flight-selected-sort {
+                line-height: 15px;
+                padding-top: 3px;
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            >.flight-sort {
+                line-height: 15px;
+                padding-top: 3px;
+                cursor: pointer;
+            }
+
+            >li:last-child {
+
+                >label,
+                input {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .booking-select-flight-list {
+            padding: 30px 0 60px;
+
+            .booking-select-flight-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 10px;
+                padding: 4px 5px;
+
+                .booking-select-info {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+
+                    .booking-select-flight-info {
+                        padding: 0 64px;
+                    }
+
+                    .booking-select-flight-info>p:first-child {
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+
+                    .booking-select-flight-info>p:last-child {
+                        font-size: 12px;
+                        font-weight: 700;
+                        text-decoration: underline;
+                    }
+
+                    .booking-select-time-info {
+                        display: flex;
+
+                        .booking-select-time-block {
+                            padding-bottom: 8px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 2px;
+
+                            >p:first-child {
+                                font-size: 20px;
+                                font-weight: 700;
+                            }
+
+                            >p:last-child {
+                                font-size: 12px;
+                            }
+                        }
+
+                        >div:nth-child(2) {
+                            width: 160px;
+                            height: 60px;
+                            font-weight: 700;
+                            font-size: 12px;
+                            text-align: center;
+                            position: relative;
+
+                            >p:nth-child(2) {
+                                font-size: 18px;
+                                z-index: 2;
+                                position: relative;
+                            }
+
+                            >div {
+                                border-bottom: 1px dotted var(--color-153);
+                                width: 160px;
+                                height: 1px;
+                                position: absolute;
+                                top: 28px;
+                                z-index: 1;
+                            }
+                        }
+                    }
+
+                    .booking-select-button {
+                        border: 1px solid var(--jinairnav);
+                        background-color: rgb(230, 230, 230, 0);
+                        border-radius: 5px;
+                        margin-left: 64px;
+                        font-size: 12px;
+                        color: gray;
+                        cursor: pointer;
+                    }
+                }
+
+                .booking-flight-buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    width: 558px;
+
+                    >.booking-flight-selected-seat {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 112px;
+                        padding: 0 15px;
+                        border-radius: 10px;
+                        border: none;
+                        background-color: var(--color-nav-main);
+                        color: #fff;
+
+                        >span>b {
+                            color: var(--jinairgreen);
+                        }
+                    }
+
+                    >button {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 112px;
+                        padding: 0 15px;
+                        border-radius: 10px;
+                        border: none;
+                        background-color: #fff;
+                        color: var(--jinairnav);
+                        cursor: pointer;
+                        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+
+                        >p:first-child {
+                            border-bottom: 1px solid #e2e2e2;
+                            width: 100%;
+                            padding-bottom: 10px;
+                            text-align: center;
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+
+                        >span {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            padding-top: 12px;
+                            font-size: 12px;
+                            line-height: 18px;
+
+                            >b {
+                                font-size: 18px;
+                            }
+                        }
+
+                        >p:last-child {
+                            padding-top: 4px;
+                        }
+                    }
+                }
+            }
+
+            .booking-select-flight-section:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+
+        // booking-select-flight-list
+    }
+
+    .booking-avaliability-bottom {
+        border-top: 2px solid var(--color-242);
+        background-color: #fff;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        // margin-bottom: -100px;
+        text-align: center;
+        // box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.06);
+        z-index: 30;
+        transform: translateY(0);
+        transition: 0.2s all 0s ease-in-out;
+
+        >.booking-avaliability-bottom-button {
+            border: none;
+            margin: 0 auto;
+            width: 144px;
+            height: 56px;
+            padding: 0 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/************************************
+ * BookingPassenger - BookingStep
+ * 탑승객 정보 입력 페이지 삳단 탭
+************************************/
+.booking-step-passenger-bottom {
+    // border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .booking-step-menu {
+        display: flex;
+        background-color: rgb(239, 239, 239);
+        border-radius: 5px;
+        margin: 0;
+
+        >li {
+            width: 200px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--jinairnav);
+            font-weight: 700;
+            position: relative;
+        }
+
+        >li:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            margin-top: -5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 7px solid rgb(196, 196, 196);
+        }
+
+        >li:nth-child(2) {
+            border-radius: 5px;
+            background-color: var(--color-nav-main);
+            color: #fff;
+        }
+    }
+
+    .booking-step-total {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            margin: 0;
+        }
+
+        p,
+        span {
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        b {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        button {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--color-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // font-size: 22px;
+        }
+    }
+}
+
+/************************************
+ * BookingPassenger
+ * 탑승객 정보 입력 페이지 메인 컨텐츠
+************************************/
+.booking-passenger-wrap {
+    background-color: rgb(249, 249, 249);
+
+    .booking-passenger-contents {
+        .booking-user-form {
+            border-radius: 10px;
+            background-color: var(--color-242);
+            padding-bottom: 5px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+
+            .booking-user-form-top {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                height: 54px;
+                padding: 0 34px;
+
+                >span {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+
+            .booking-user-info {
+                padding: 24px 34px;
+                border-radius: 10px;
+                background-color: #fff;
+                margin: 0 2px;
+                display: flex;
+                justify-content: space-between;
+
+                .booking-user-info-left>li,
+                .booking-user-info-right>li {
+                    display: flex;
+                    align-items: center;
+                    height: 44px;
+
+                    >label {
+                        width: 104px;
+                        font-weight: 700;
+
+                        >span {
+                            color: #d93939;
+                        }
+                    }
+
+                    >div,
+                    select {
+                        display: flex;
+                        align-items: center;
+                        height: 44px;
+                        padding: 0 24px;
+                        border: 1px solid var(--color-242);
+                        border-radius: 6px;
+                        font-size: 14px;
+                    }
+                }
+
+                .booking-user-info-left {
+                    >li:first-child>div {
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                        padding: 0;
+
+                        >div {
+                            display: flex;
+                            align-items: center;
+                            height: 44px;
+                            padding: 0 24px;
+                            margin-right: 8px;
+                            border: 1px solid var(--color-242);
+                            border-radius: 6px;
+                            font-size: 14px;
+                            background-color: var(--color-242);
+                        }
+
+                        div:first-child {
+                            width: 120px;
+                        }
+
+                        div:last-child {
+                            width: 246px;
+                        }
+                    }
+
+                    >li:not(:first-child) {
+                        >div {
+                            width: 424px;
+                            background-color: var(--color-242);
+                        }
+                    }
+                }
+
+                .booking-user-info-right {
+                    >li:first-child {
+                        >div {
+                            border: none;
+                            display: flex;
+                            gap: 8px;
+                            padding: 0;
+
+                            >div {
+                                border: 1px solid rgb(193, 193, 193);
+                                border-radius: 6px;
+                                width: 158px;
+                                height: 44px;
+                                padding: 0 24px;
+                                display: flex;
+                                align-items: center;
+                                font-size: 14px;
+
+                                display: flex;
+                                justify-content: space-between;
+
+                                >span {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 20px;
+                                    color: var(--color-181);
+                                }
+                            }
+                        }
+                    }
+
+                    >li:not(:first-child) {
+                        >select {
+                            width: 424px;
+                            border: 1px solid rgb(193, 193, 193);
+                        }
+                    }
+                }
+
+                .booking-user-info-left>li:not(:last-child),
+                .booking-user-info-right>li:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .booking-passenger-form {
+            border-radius: 10px;
+            background-color: var(--color-242);
+            padding-bottom: 5px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+
+            .booking-passenger-form-top {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                height: 54px;
+                padding: 0 34px;
+
+                >span {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+
+            .booking-passenger-info {
+                padding: 24px 34px;
+                border-radius: 10px;
+                background-color: #fff;
+                margin: 0 2px;
+                display: flex;
+                justify-content: space-between;
+
+                .booking-passenger-info-left>li,
+                .booking-passenger-info-right>li {
+                    display: flex;
+                    align-items: center;
+                    height: 44px;
+
+                    >label {
+                        width: 104px;
+                        font-weight: 700;
+
+                        >span {
+                            color: #d93939;
+                        }
+                    }
+
+                    input,
+                    select {
+                        height: 44px;
+                        padding: 0 24px;
+                        border: 1px solid rgb(193, 193, 193);
+                        border-radius: 6px;
+                        font-size: 14px;
+                    }
+                }
+
+                .booking-passenger-info-left {
+                    >.selected-gender {
+                        // border: 1px solid red;
+                        color: red;
+                    }
+
+                    >li:first-child>div {
+                        input:first-child {
+                            width: 120px;
+                            margin-right: 8px;
+                        }
+
+                        input:last-child {
+                            width: 246px;
+                        }
+                    }
+
+                    >li:not(:first-child) {
+                        >input {
+                            width: 424px;
+                        }
+                    }
+
+                    >li:last-child {
+                        >input {
+                            width: 316px;
+                            margin-right: 8px;
+                        }
+
+                        >div {
+                            width: 100px;
+                            height: 44px;
+                            border-radius: 6px;
+                            border: 1px solid var(--jinairnav);
+                            background: var(--jinairnav);
+                            color: #fff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .booking-passenger-info-right {
+                    >li:first-child>div {
+                        display: flex;
+                        gap: 8px;
+
+                        >div {
+                            border: 1px solid rgb(193, 193, 193);
+                            border-radius: 6px;
+                            width: 158px;
+                            height: 44px;
+                            padding: 0 24px;
+                            display: flex;
+                            align-items: center;
+                            font-size: 14px;
+                            cursor: pointer;
+                        }
+
+                        .selected-gender {
+                            border: 1px solid var(--jinairnav);
+                            display: flex;
+                            justify-content: space-between;
+
+                            >span {
+                                display: flex;
+                                align-items: center;
+                                font-size: 20px;
+                                color: var(--jinairnav);
+                            }
+                        }
+                    }
+
+                    >li:not(:first-child) {
+                        >select {
+                            width: 424px;
+                        }
+                    }
+                }
+
+                .booking-passenger-info-left>li:not(:last-child),
+                .booking-passenger-info-right>li:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .booking-passenger-info-desc {
+            padding-top: 46px;
+            font-size: 14px;
+
+            div {
+                margin-bottom: 8px;
+
+                >p {
+                    font-weight: 700;
+                }
+
+                >ul {
+                    list-style-type: "-";
+                    padding-left: 10px;
+                    line-height: 20px;
+                }
+            }
+
+            button {
+                border: 1px solid #bdd600;
+                font-size: 12px;
+                border-radius: 4px;
+                height: 28px;
+                padding: 0 14px;
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+
+                >span {
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50%;
+                    width: 10px;
+                    height: 10px;
+                    padding: 3px;
+                    margin-left: 5px;
+                    background-color: var(--jinairgreen);
+                }
+            }
+        }
+
+        .booking-passenger-reservant {
+            margin-top: 60px;
+
+            >p {
+                margin-bottom: 24px;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            // > p::before {
+            //     content: '';
+            //     // position: absolute;
+            //     z-index: -1;
+            //     left: 0;
+            //     bottom: 8%;
+            //     margin-top: 0;
+            //     width: 100%;
+            //     height: 7px;
+            //     border-radius: 2px;
+            //     background: linear-gradient(to right, rgba(189, 214, 0, 0.7) 0%, rgba(211, 233, 46, 0) 100%);
+            // }
+            .passenger-reservant-form {
+                padding: 24px 34px;
+                border-radius: 10px;
+                background-color: #fff;
+                margin: 0 2px;
+                display: flex;
+                justify-content: space-between;
+
+                >li {
+                    display: flex;
+                    align-items: center;
+                    height: 44px;
+
+                    >label {
+                        width: 104px;
+                        font-weight: 700;
+
+                        >span {
+                            color: #d93939;
+                        }
+                    }
+
+                    input,
+                    select {
+                        height: 44px;
+                        padding: 0 24px;
+                        border: 1px solid rgb(193, 193, 193);
+                        border-radius: 6px;
+                        font-size: 14px;
+                    }
+                }
+
+                >li:first-child>input {
+                    width: 424px;
+                }
+
+                >li:last-child {
+                    display: flex;
+                    gap: 8px;
+
+                    >select {
+                        width: 150px;
+                    }
+
+                    >input {
+                        width: 266px;
+                    }
+                }
+            }
+
+            .passenger-reservant-desc {
+                padding-top: 46px;
+                font-size: 14px;
+                list-style-type: "-";
+                padding-left: 10px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .booking-passenger-next-btn {
+        text-align: center;
+        padding: 56px 0;
+
+        >button {
+            height: 56px;
+            border-radius: 5px;
+            background-color: var(--jinairnav);
+            color: #fff;
+            padding: 0 16px;
+            min-width: 144px;
+            font-weight: 700;
+            width: auto;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+.booking-passenger-info-left {
+    >li:first-child {
+        position: relative;
+
+        .passengerForm-error-msg {
+            display: flex;
+            position: absolute;
+            z-index: 10;
+            top: 45px;
+            left: 105px;
+            gap: 85px;
+        }
+    }
+
+    >li:nth-child(2) {
+        position: relative;
+
+        .passengerForm-error-msg {
+            // border: 1px solid red;
+            // display: flex;
+            position: absolute;
+            z-index: 10;
+            top: 45px;
+            left: 105px;
+            // gap: 85px;
+        }
+    }
+}
+
+.booking-passenger-info-right {
+    >li:first-child {
+        position: relative;
+
+        .passengerForm-error-msg {
+            // border: 1px solid red;
+            display: flex;
+            position: absolute;
+            z-index: 10;
+            top: 45px;
+            left: 105px;
+            gap: 85px;
+        }
+    }
+}
+
+
+.booking-step-selectSeat-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .booking-step-back-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 110px;
+        height: 44px;
+        margin-right: 60px;
+        font-weight: 700;
+        font-size: 18px;
+        cursor: pointer;
+
+        >span:first-child {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .booking-step-menu {
+        display: flex;
+        background-color: rgb(239, 239, 239);
+        border-radius: 5px;
+        margin: 0;
+
+        >li {
+            width: 200px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--jinairnav);
+            font-weight: 700;
+            position: relative;
+        }
+
+        >li:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            margin-top: -5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 7px solid rgb(196, 196, 196);
+        }
+
+        >li:nth-child(3) {
+            border-radius: 5px;
+            background-color: var(--color-nav-main);
+            color: #fff;
+        }
+    }
+
+    .booking-step-total {
+        // position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            margin: 0;
+        }
+
+        p,
+        span {
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        b {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        button {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--color-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+
+/************************************
+ * BookingSelectSeat
+ * 좌석 선택(부가서비스) 페이지
+************************************/
+.booking-selectSeat-wrap {
+    background-color: rgb(249, 249, 249);
+
+    .booking-selectSeat-contents {
+        width: 1280px;
+        margin: 0 auto;
+
+        .booking-selectSeat-section {
+            border: 1px solid var(--color-nav-main);
+            background: var(--color-nav-main);
+            color: #fff;
+            padding: 16px 24px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            >span {
+                background-color: var(--jinairgreen);
+                color: var(--fontblack);
+                display: flex;
+                align-items: center;
+                padding: 0 8px;
+                min-height: 26px;
+                border-radius: 5px;
+                font-weight: 700;
+            }
+
+            >div:nth-child(2) {
+                display: flex;
+                gap: 10px;
+            }
+
+            >div:nth-child(3) {
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+            }
+
+            >div:last-child {
+                display: flex;
+                gap: 5px;
+            }
+        }
+
+        .booking-selectSeat-detail {
+            margin-top: 60px;
+
+            .booking-selectSeat-detail-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                >div {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    >span:first-child {
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+
+                    >span:last-child {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        font-size: 12px;
+                        font-weight: bold;
+
+                        >span:first-child {
+                            color: #d93939;
+                        }
+
+                        >.booking-selectSeat-alert {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            border: 1px solid #192547;
+                            background: #fff;
+                            color: #192547;
+                            font-weight: 700;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                >span {
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+
+            .booking-selectSeat-detail-bottom {
+                display: flex;
+                gap: 16px;
+                margin-top: 20px;
+                z-index: 10px;
+                position: sticky;
+                top: 110px;
+                overflow: visible;
+                height: 80px;
+                overflow: visible;
+                // z-index: 30;
+                
+                > div:first-child {
+                    height: 70px;
+                    > div:not(:first-child) {
+                        margin-top: 10px;
+                    }
+                    // > div:last-child {
+                    //     margin-bottom: 100px;
+                    //     border: 1px solid red;
+                    // }
+                    .selectSeat-detail-bottom-left {
+                        // border: 1px solid blue;
+                        background: var(--jinairnav);
+                        color: #fff;
+                        width: 310px;
+                        height: 70px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 2px 10px;
+                        border-radius: 10px;
+                        z-index: 20;
+    
+                        .selectSeat-detail-passenger-info {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+    
+                            .selectSeat-passenger-info-num {
+                                background: #fff;
+                                color: var(--jinairnav);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                font-weight: 700;
+                                font-size: 10px;
+                            }
+    
+                            .selectSeat-passenger-info-icon {
+                                font-size: 18px;
+                            }
+    
+                            .selectSeat-passenger-info-name {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                        }
+    
+                        .selectSeat-select-info {
+                            border: 1px solid #fff;
+                            border-radius: 6px;
+                            display: flex;
+                            justify-content: space-between;
+                            width: 102px;
+                            height: 54px;
+                            padding: 0 10px;
+                            align-items: center;
+                            position: relative;
+    
+                            >div:first-child {
+                                display: flex;
+                                flex-direction: column;
+    
+                                >span:first-child {
+                                    font-size: 20px;
+                                }
+    
+                                >span:last-child {
+                                    font-size: 12px;
+                                }
+                            }
+    
+                            >div:last-child {
+                                position: absolute;
+                                top: -3px;
+                                right: 0;
+                                font-size: 28px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .selectSeat-detail-bottom-right {
+                    display: flex;
+
+                    .selectSeact-seat-info {
+                        width: 810px;
+                        height: 68px;
+                        flex: 1;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        align-items: center;
+                        padding: 0 20px;
+                        border-radius: 10px;
+                        background: #fff;
+                        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+                        font-size: 12px;
+
+                        >li {
+                            display: flex;
+                            gap: 3px;
+                            align-items: center;
+                        }
+                    }
+
+                    >div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 5px;
+                        width: 70px;
+                        height: 68px;
+                        font-weight: 700;
+                        font-size: 12px;
+                        border-radius: 10px;
+                        background: #fff;
+                        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+                        cursor: pointer;
+
+                        >span:first-child {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 24px;
+                            height: 24px;
+                            background-color: var(--jinairgreen);
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+
+            .selectSeat-select-seat {
+                // border: 1px solid red;
+                overflow: hidden;
+                // width: 250px;
+                // margin: 0 auto;
+                height: 1678px;
+                .selectSeat-select-premium-container {
+                    width: 100%;
+                    height: 1678px;
+                    background-image: url('../../public/images/booking/premium_bg.png');
+                    background-position: center;
+                    background-size: contain;
+                    background-size: 150%;
+                    background-repeat: no-repeat;
+
+                    .selectSeat-select-premium-seat {
+                        border: 1px solid rgb(0, 0, 255, 0);
+                        width: 250px;
+                        margin: 0 auto;
+                        padding-right: 15px;
+
+                        > ul:nth-child(3) {
+                            margin-top: 50px;
+                        }
+                        > ul:nth-child(4) {
+                            // border: 1px solid green;
+                            margin-top: 50px;
+                        }
+
+                        .select-premium-seat {
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            margin-top: 135px;
+                            margin-bottom: 60px;
+                            // margin: 0 10px;
+                            > li {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                // border-radius: 5px;
+                                // width: 27px;
+                                // height: 35px;
+                                font-size: 35px;
+                                cursor: pointer;
+                            }
+                            > li:nth-child(4n+2) {
+                                margin-right: 40px;
+                            }
+                            > li:nth-child(4n+3) {
+                                margin-left: 40px;
+                            }
+                        }
+                        .select-basic-seat {
+                            display: grid;
+                            grid-template-columns: repeat(6, 1fr);
+                            row-gap: 6px;
+                            > li {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 30px;
+                                cursor: pointer;
+                                color: #9e9e9e;
+                            }
+                            > li:nth-child(6n+3) {
+                                // border: 1px solid blue;
+                                margin-right: 30px;
+                            }
+                            > li:nth-child(6n+4) {
+                                // border: 1px solid blue;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+                    
+
+
+                    // .selectSeat-select-premium-seat {
+                    //     border: 1px solid green;
+                    //     display: grid;
+                    //     grid-template-columns: repeat(4, 1fr);
+                    //     margin: 0 10px;
+                    //     > li {
+                    //         display: flex;
+                    //         justify-content: center;
+                    //         align-items: center;
+                    //         // border-radius: 5px;
+                    //         // width: 27px;
+                    //         // height: 35px;
+                    //         font-size: 45px;
+                    //         cursor: pointer;
+                    //     }
+                    //     > li:nth-child(4n+2) {
+                    //         margin-right: 10px;
+                    //     }
+                    //     > li:nth-child(4n+3) {
+                    //         margin-left: 10px;
+                    //     }
+                    // }
+                    // .select-basic-seat {
+                    //     display: grid;
+                    //     grid-template-columns: repeat(6, 1fr);
+                    //     // margin: 0 10px;
+                    //     > li {
+                    //         display: flex;
+                    //         justify-content: center;
+                    //         align-items: center;
+                    //         font-size: 35px;
+                    //         cursor: pointer;
+                    //     }
+                    //     > li:nth-child(6n+3) {
+                    //         // border: 1px solid blue;
+                    //         margin-right: 10px;
+                    //     }
+                    //     > li:nth-child(6n+4) {
+                    //         // border: 1px solid blue;
+                    //         margin-left: 10px;
+                    //     }
+                    // }
+                }
+            .selectSeat-select-basic-container {
+                width: 100%;
+                height: 1678px;
+                background-image: url('../../public/images/booking/premium_bg.png');
+                background-position: center;
+                background-size: contain;
+                background-size: 150%;
+                background-repeat: no-repeat;
+
+                .selectSeat-select-premium-seat {
+                    border: 1px solid rgb(0, 0, 255, 0);
+                    width: 250px;
+                    margin: 0 auto;
+                    padding-right: 15px;
+
+                    > ul:nth-child(3) {
+                        margin-top: 50px;
+                    }
+                    > ul:nth-child(4) {
+                        // border: 1px solid green;
+                        margin-top: 50px;
+                    }
+
+                    .select-premium-seat {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        margin-top: 135px;
+                        margin-bottom: 60px;
+                        // margin: 0 10px;
+                        > li {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #9e9e9e;
+                            font-size: 35px;
+                            cursor: pointer;
+                        }
+                        > li:nth-child(4n+2) {
+                            margin-right: 40px;
+                        }
+                        > li:nth-child(4n+3) {
+                            margin-left: 40px;
+                        }
+                    }
+                    .select-basic-seat {
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+                        row-gap: 6px;
+                        > li {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 30px;
+                            cursor: pointer;
+                            // color: #9e9e9e;
+                        }
+                        > li:nth-child(6n+3) {
+                            // border: 1px solid blue;
+                            margin-right: 30px;
+                        }
+                        > li:nth-child(6n+4) {
+                            // border: 1px solid blue;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+            }
+        }
+    }
+
+    .booking-selectSeat-buttons {
+        // border: 1px solid red;
+        text-align: center;
+        background: #ffffff;
+        box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.06);
+        z-index: 30;
+        transform: translateY(0);
+        transition: 0.2s all 0s ease-in-out;
+        position: sticky;
+        bottom: 0;
+
+        // padding: 54px 0;
+        >button {
+            border: none;
+            height: 56px;
+            padding: 0 16px;
+            min-width: 144px;
+            width: auto;
+            font-size: 16px;
+        }
+
+        >button:first-child {
+            background-color: #fff;
+            text-decoration: underline;
+            color: var(--jinairnav);
+        }
+
+        >button:last-child {
+            background-color: var(--jinairnav);
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+}
+
+
+/************************************
+ * BookingSeatDesc
+ * 좌석 선택(부가서비스) 페이지 - 좌석 안내 모달창
+************************************/
+.booking-seat-modal-wrap {
+    .booking-seat-modal-top {
+        border-bottom: 2px solid var(--jinairgreen);
+        font-size: 18px;
+        font-weight: 700;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        >span:last-child {
+            display: flex;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+
+    .booking-seat-modal-contents {
+        padding: 15px 20px;
+        font-size: 13px;
+
+        >li {
+            display: flex;
+            position: relative;
+            padding: 10px 0;
+
+            >span:first-child {
+                margin-left: 15px;
+                display: block;
+                width: 140px;
+                font-weight: 700;
+            }
+
+            >span:last-child {
+                font-weight: 700;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        >li::before {
+            content: "\2022";
+            /* 원형 리스트 아이콘 (디스크) */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #000;
+        }
+
+        >li:nth-child(3)::before {
+            top: 30%;
+        }
+    }
+
+    .booking-seat-modal-bottom {
+        padding: 15px 20px 0 15px;
+        text-align: center;
+
+        >p {
+            text-align: left;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        >button {
+            background-color: var(--jinairnav);
+            color: #fff;
+            width: 150px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+/************************************
+ * BookingSeatAlert
+ * 좌석 선택 페이지 - 선택 불가 좌석 안내 모달창
+************************************/
+.booking-seat-alert {
+    text-align: center;
+    > p {
+        font-weight: 700;
+        color: var(--jinairnav);
+        padding-bottom: 21px;
+    }
+    > button {
+        background-color: var(--jinairnav);
+        color: #fff;
+        border-radius: 6px;
+        padding: 5px 15px;
+        cursor: pointer;
+    }
+}
+
+
+/************************************
+ * BookingPayment - BookingStep
+ * 결제 정보 확인 페이지 삳단 탭
+************************************/
+.booking-step-payment-bottom {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .booking-step-menu {
+        display: flex;
+        background-color: rgb(239, 239, 239);
+        border-radius: 5px;
+        margin: 0;
+
+        >li {
+            width: 200px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--jinairnav);
+            font-weight: 700;
+            position: relative;
+        }
+
+        >li:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            margin-top: -5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 7px solid rgb(196, 196, 196);
+        }
+
+        >li:last-child {
+            border-radius: 5px;
+            background-color: var(--color-nav-main);
+            color: #fff;
+        }
+    }
+
+    .booking-step-total {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            margin: 0;
+        }
+
+        p,
+        span {
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        b {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        button {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            border: none;
+            border-radius: 50%;
+            background-color: var(--color-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

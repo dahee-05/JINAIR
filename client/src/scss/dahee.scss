@@ -1,0 +1,550 @@
+/********************************
+2025.03.25 김다희 작성
+********************************/
+
+.mobile-wrapper{
+  background-color: #f7f8fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.mobile-container{
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 0 1rem 3rem 1rem;
+  background-color: rgb(255, 255, 255);
+}
+/********************************
+ 로그인 화면
+********************************/
+.login-content,
+.find-content,
+.signup-content{
+  // border: 1px solid red;
+  padding: 0 20px;
+}
+.login-header,
+.find-header,
+.signup-header{
+  height: 50px;
+  margin-top: 20px;
+  position: relative;
+}
+.header-icon{
+  position: absolute;
+  font-size: 25px;
+  font-weight: 200;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.login-header span,
+.find-header span,
+.signup-header span{
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  top: -3px;
+  left: 30px;
+}
+.signup-header .signup-success{
+  left: 0;
+}
+.find-header,
+.signup-header{
+  display: flex;
+  justify-content: space-between;
+}
+.header-icon2{
+  font-size: 25px;
+  font-weight: 200;
+  cursor: pointer;
+}
+.login-logo {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px;
+}
+.login-logo img{
+  width: 180px;
+  margin-bottom: 10px;
+}
+.login-info{
+  font-size: 0;
+}
+.login-info span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.login-info>span:first-child>input,
+.login-info>span:nth-child(2)>input{
+  width: 93%;
+  border: 1px solid #e7e7e7;
+  outline: none;
+  padding: 18px 20px;
+}
+.login-info>span:first-child>input{
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+}
+.login-info>span:nth-child(2)>input{
+  border-radius: 0 0 8px 8px;
+}
+.login-info>span:first-child>input:focus,
+.login-info>span:nth-child(2)>input:focus{
+  border: 2px solid var(--color-main);
+} 
+.login-info-text{
+  margin-left: 10px;
+} 
+.login-btn,
+.find-submit-btn,
+.agree-btn,
+.find-user-btn{
+  width: 100%;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 120px;
+  margin: 20px 0;
+  color: #b4b4b4;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.login-btn-active,
+.find-submit-active,
+.find-user--btn-active{
+  background-color: var(--color-main);
+  color: #fff;
+  font-weight: bold;
+}
+.find-user--btn-active{
+  margin-top: 50px;
+}
+.id_save{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #3b3b3b;
+}
+.id_save>div:first-child >input,
+.agreement-list>li>input,
+.user-info .ch-box-input{
+  display: none;
+}
+.id_save label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.id_save>div:first-child>label>span::before,
+.agreement-list>li>label>span::before,
+.agreement-list>li:nth-child(2)>label>span:nth-child(2)::before,
+.user-info .ch-box::before{
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -2px 10px 0 0 ;
+  vertical-align: middle;
+  background: url('../assets/svg/login_checkbox.png') no-repeat 0 0 / 1.5rem ;
+  border-radius: 50%;
+}
+#save-id:checked + label > span::before,
+#check-ch:checked + label > span::before,
+[id^="check-ch2"]:checked + label > .check-label::before {
+  background:  var(--color-main) url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center center / 1rem;
+}
+
+.id_save>div:nth-child(2)>span:nth-child(2){
+  // border: 1px solid red;
+  display: inline-block;
+  width: 1.5px;
+  height: 12px;
+  background: #e7e7e7;
+  margin: 0 10px;
+}
+.find-id{
+  cursor: pointer;
+}
+.find-pwd{
+  cursor: pointer;
+  
+}
+.sns-login{
+  margin: 30px 0 ;
+  display: flex;
+  justify-content: space-between;
+}
+.sns-login>div:first-child>span{
+  font-size: 13px;
+  color: #3b3b3b;
+}
+.signup-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+}
+.signup-text>span{
+  color: #3b3b3b;
+}
+.sns--login-btn {
+  display: flex;
+  align-items: center;
+}
+.sns--login-btn button{
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 100%;
+  background-color: #eee;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.sns--login-btn button:first-child{
+  background-image: url('../assets/svg/naver.png');
+}
+.sns--login-btn button:nth-child(2){
+  background-image: url('../assets/svg/kakao.png');
+}
+.signup-btn{
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 30px;
+  padding: 15px 120px;
+  margin: 15px 0 20px;
+  color:  #4583f5;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+/********************************
+ 아이디/비밀번호 찾기 화면
+********************************/
+.find-content input,
+.signup-content input{
+  box-sizing: border-box;
+}
+.find-title{
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  // justify-content: space-between;
+  position: relative;
+}
+.find-title>li{
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  width: 5rem;
+  border-top: none;
+}
+.find-title>li>span{
+  color: #9c9c9c;
+  font-weight: 500;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 4rem;
+  font-size: 14px;
+  letter-spacing: -0.9px;
+  border-bottom: 3px solid #e7e7e7;
+  cursor: pointer;
+}
+.find-title>li>.find-info-active {
+  color: black;
+  border-bottom: 3px solid black;
+  font-weight: 700;
+}
+.user-info{
+  list-style: none;
+  margin-bottom: 50px;
+}
+.find-basic-info-title{
+  font-size: 13px;
+  color:  #3a3a3a;
+  margin: 60px 0 20px 0;
+}
+.find-basic-info{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.find-basic-info2{
+  margin: 0;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 15px; 
+}
+.find-basic-userinfo{
+  margin-bottom: 10px;
+}
+.user-info .id,
+.user-info .name,
+.user-info .birth,
+.user-info .email,
+.user-info .auth-code,
+.user-info .phone,
+.user-info .password,
+.user-info .cpassword{
+  width: 650px;
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  outline: none;
+}
+.user-info .kname_first,
+.user-info .ename_first,
+.user-info .kname_last,
+.user-info .ename_last{
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  outline: none;
+  // margin-right: 10px;
+}
+.user-info .kname_first {
+  margin-right: 12.5px;
+}
+.user-info .kname_first,
+.user-info .ename_first{
+  width: 200px;
+}
+.user-info .kname_last,
+.user-info .ename_last{
+  width: 300px;
+}
+.user-info .id,
+.user-info .birth,
+.user-info .email,
+.user-info .phone,
+.user-info .auth-code,
+.user-info .password,
+.user-info .cpassword{
+  width: 100%;
+}
+.info-engname {
+  margin-bottom: 20px; 
+}
+.user-info .validate-text {
+  margin: 0px 0px 15px 5px;
+  font-size: 12px;
+  // color: #fff;
+}
+.validate-text.error {
+  color: red;
+}
+.find-basic-info .info-gender .gender,
+.find-basic-info2 .info-gender .gender{
+  background-color: #fff;
+  padding: 15px 18px;
+  border: 1px solid  #e7e7e7;
+}
+.find-basic-info .info-gender button,
+.find-basic-info2 .info-gender button{
+  right: 500px;
+}
+.find-basic-info .info-gender button:first-child,
+.find-basic-info2 .info-gender button:first-child{
+  border-radius: 8px 0 0 8px;
+}  
+.find-basic-info .info-gender button:nth-child(2),
+.find-basic-info2 .info-gender button:nth-child(2){
+  border-radius: 0 8px 8px 0;
+}  
+.find-basic-info .info-gender  .info-gender-active,
+.find-basic-info2 .info-gender  .info-gender-active{
+  border: 2px solid var(--color-main) !important;
+}
+.user-info .id:focus,
+.user-info .name:focus,
+.user-info .kname_first:focus,
+.user-info .kname_last:focus,
+.user-info .ename_first:focus,
+.user-info .ename_last:focus,
+.user-info .birth:focus,
+.user-info .gender:focus,
+.user-info .email:focus,
+.user-info .auth-code:focus,
+.user-info .phone:focus,
+.user-info .password:focus,
+.user-info .cpassword:focus{
+  outline: 1.5px solid var(--color-main);
+}
+.user-info .auth-input,
+.user-id-check{
+  position: relative;
+}
+.auth-input .auth-btn,
+.id-check-btn{
+  top: 12px;
+  right: 15px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  cursor: pointer;
+}
+.find-user-content{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+/********************************
+ 회원가입 약관 동의 화면
+********************************/
+.areement{
+  margin: 16px 0 20px;
+  font-size: 23px;
+  font-weight: 200;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+}
+.agreement-list{
+  list-style: none;
+}
+.agreement-list>li:first-child{
+  padding: 15px 15px;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 25px;
+}
+.agreement-list>li{
+  font-size: 13px;
+  padding: 5px 15px;
+}
+.agreement-list>li:last-child{
+  margin-bottom: 30px;
+}
+.agree-btn{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-main);
+}
+.signup-success-btn{
+  margin-top: 50px;
+}
+.term-info {
+  color: #4583f5;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.signup-terms .ant-modal-body{
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.signup-terms .ant-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.signup-terms .ant-modal-body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.signup-terms .ant-modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/********************************
+ 회원가입  화면
+********************************/
+.user-info-text{
+  font-size: 13px;
+  margin-bottom: 50px;
+  color: #3a3a3a;
+}
+.ch-box{
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+
+/********************************
+ 유저 공지사항  화면
+********************************/
+.mp-content{
+  display: block;
+  padding-bottom: 50px;
+}
+.notice-table{
+  width: 100%;
+  overflow-x: auto;
+}
+.notice-title{
+  display: block;
+  top: 60px;
+  margin-top: 30px !important;
+  margin-bottom: 50px !important;
+  background: none !important;
+  font-size: 24px;
+  position: relative;
+  z-index: 100;
+  font-weight: 700;
+}
+.notice-table,
+.notice-info-box{
+  margin: 60px auto 20px !important;
+  width: 1200px !important;
+  border-collapse: collapse;
+}
+.notice-table>thead>tr>th{
+  font-size: 18px;
+  background-color: rgb(239, 239, 239);
+}
+.notice-table tr th,
+.notice-table tr td{
+  padding: 10px 0;
+  border-top: 2px solid rgb(224, 223, 223);
+  text-align: center;
+  vertical-align: middle;
+}
+.notice-table tr td{
+  font-weight: 400;
+  font-size: 16px;
+}
+.notice-table tbody tr:hover{
+  background-color: rgb(247, 247, 247);
+}
+.notice-table tr:last-child td{
+  border-bottom: 2px solid rgb(224, 223, 223);
+}
+.admin-airlist-bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.custom-pagination button {
+  border: none;
+  padding: 6px 8px;
+  background-color: none;
+  cursor: pointer;
+}
+.notice-title2{
+  cursor: pointer;
+}
+.notice-info-box tbody tr td:nth-child(2){
+  padding: 20px 0 ;
+}

@@ -1,0 +1,137 @@
+[
+    {
+        "category": "폭발물",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/ammunition.png",
+                "name": "탄약",
+                "name_en": "Ammunition"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/fireworks.png",
+                "name": "폭죽",
+                "name_en": "Fireworks"
+            }
+        ]
+    },
+    {
+        "category": "가스류",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/aerosols.png",
+                "name": "에어로졸",
+                "name_en": "Aerosols"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/butane-gas.png",
+                "name": "부탄가스",
+                "name_en": "Butane Gas"
+            }
+        ]
+    },
+    {
+        "category": "인화성 액체",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/paint.png",
+                "name": "페인트",
+                "name_en": "Paint"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/alcohol.png",
+                "name": "알코올",
+                "name_en": "Alcohol"
+            }
+        ]
+    },
+    {
+        "category": "인화성 고체",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/solid-fuel.png",
+                "name": "고체연료",
+                "name_en": "Solid Fuel"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/ignition-coal.png",
+                "name": "번개탄",
+                "name_en": "Ignition Coal"
+            }
+        ]
+    },
+    {
+        "category": "산화성 물질",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/crorox.png",
+                "name": "락스",
+                "name_en": "Crorox"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/bleaching-poxer.png",
+                "name": "표백제",
+                "name_en": "Bleaching Powder"
+            }
+        ]
+    },
+    {
+        "category": "독성 및 전염성 물질",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/herbcide.png",
+                "name": "제초제",
+                "name_en": "Herbicide"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/pesticide.png",
+                "name": "살충제",
+                "name_en": "Pesticide"
+            }
+        ]
+    },
+    {
+        "category": "방사성 물질",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/radioisotope.png",
+                "name": "방사성 동위원소",
+                "name_en": "Radioisotope"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/radiographic-test-equipmenr.png",
+                "name": "방사선 투과검사 장비",
+                "name_en": "Radiographic Test Equipment"
+            }
+        ]
+    },
+    {
+        "category": "부식성 물질",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/wet-battery.png",
+                "name": "습식 배터리",
+                "name_en": "Wet Battery"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/mercury-thermometer.png",
+                "name": "수은 온도계",
+                "name_en": "Mercury Thermometer"
+            }
+        ]
+    },
+    {
+        "category": "기타 위험 물질",
+        "items": [
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/spare-liion-batteries.png",
+                "name": "여분의 리튬 배터리",
+                "name_en": "Spare Li-ion Batteries"
+            },
+            {
+                "img": "https://images.jinair.com/newHom/images/web/reservation/dangerous/dry-ice.png",
+                "name": "드라이아이스",
+                "name_en": "Dry Ice"
+            }
+        ]
+    }
+]

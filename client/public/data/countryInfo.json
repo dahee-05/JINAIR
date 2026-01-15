@@ -1,0 +1,248 @@
+[
+  {
+    "value": "KOR",
+    "ko_name": "한국",
+    "en_name": "REPUBLIC OF KOREA",
+    "dial_code": "+82"
+  },
+  {
+    "value": "JPN",
+    "ko_name": "일본",
+    "en_name": "JAPAN",
+    "dial_code": "+81"
+  },
+  {
+    "value": "GHA",
+    "ko_name": "가나",
+    "en_name": "GHANA",
+    "dial_code": "+233"
+  },
+  {
+    "value": "GAB",
+    "ko_name": "가봉",
+    "en_name": "GABON",
+    "dial_code": "+241"
+  },
+  {
+    "value": "GUY",
+    "ko_name": "가이아나",
+    "en_name": "GUYANA",
+    "dial_code": "+592"
+  },
+  {
+    "value": "GMB",
+    "ko_name": "감비아",
+    "en_name": "GAMBIA",
+    "dial_code": "+220"
+  },
+  {
+    "value": "GLP",
+    "ko_name": "과들루프",
+    "en_name": "GUADELOUPE",
+    "dial_code": "+590"
+  },
+  {
+    "value": "GTM",
+    "ko_name": "과테말라",
+    "en_name": "GUATEMALA",
+    "dial_code": "+502"
+  },
+  {
+    "value": "GUM",
+    "ko_name": "괌",
+    "en_name": "GUAM",
+    "dial_code": "+1671"
+  },
+  {
+    "value": "GRD",
+    "ko_name": "그레나다",
+    "en_name": "GRENADA",
+    "dial_code": "+1473"
+  },
+  {
+    "value": "GRC",
+    "ko_name": "그리스",
+    "en_name": "GREECE",
+    "dial_code": "+30"
+  },
+  {
+    "value": "GRL",
+    "ko_name": "그린란드",
+    "en_name": "GREENLAND",
+    "dial_code": "+299"
+  },
+  {
+    "value": "GIN",
+    "ko_name": "기니",
+    "en_name": "GUINEA",
+    "dial_code": "+224"
+  },
+  {
+    "value": "GNB",
+    "ko_name": "기니비사우",
+    "en_name": "GUINEA BISSAU",
+    "dial_code": "+245"
+  },
+  {
+    "value": "GUF",
+    "ko_name": "기아나(프)",
+    "en_name": "FRENCH GUIANA",
+    "dial_code": "+594"
+  },
+  {
+    "value": "NAM",
+    "ko_name": "나미비아",
+    "en_name": "NAMIBIA",
+    "dial_code": "+264"
+  },
+  {
+    "value": "NRU",
+    "ko_name": "나우루",
+    "en_name": "NAURU",
+    "dial_code": "+674"
+  },
+  {
+    "value": "NGA",
+    "ko_name": "나이지리아",
+    "en_name": "NIGERIA",
+    "dial_code": "+234"
+  },
+  {
+    "value": "SSD",
+    "ko_name": "남수단",
+    "en_name": "SOUTH SUDAN",
+    "dial_code": "+211"
+  },
+  {
+    "value": "ZAF",
+    "ko_name": "남아프리카공화국",
+    "en_name": "REP SOUTH AFRICA",
+    "dial_code": "+27"
+  },
+  {
+    "value": "NLD",
+    "ko_name": "네덜란드",
+    "en_name": "NETHERLANDS",
+    "dial_code": "+31"
+  },
+  {
+    "value": "NPL",
+    "ko_name": "네팔",
+    "en_name": "NEPAL",
+    "dial_code": "+977"
+  },
+  {
+    "value": "NOR",
+    "ko_name": "노르웨이",
+    "en_name": "NORWAY",
+    "dial_code": "+47"
+  },
+  {
+    "value": "NFK",
+    "ko_name": "노퍽",
+    "en_name": "NORFOLK ISLAND",
+    "dial_code": ""
+  },
+  {
+    "value": "NCL",
+    "ko_name": "누벨칼레도니",
+    "en_name": "NEW CALEDONIA",
+    "dial_code": "+687"
+  },
+  {
+    "value": "NZL",
+    "ko_name": "뉴질랜드",
+    "en_name": "NEW ZEALAND",
+    "dial_code": "+64"
+  },
+  {
+    "value": "NIU",
+    "ko_name": "니우에",
+    "en_name": "NIUE",
+    "dial_code": "+683"
+  },
+  {
+    "value": "NER",
+    "ko_name": "니제르",
+    "en_name": "NIGER",
+    "dial_code": "+227"
+  },
+  {
+    "value": "NIC",
+    "ko_name": "니카라과",
+    "en_name": "NICARAGUA",
+    "dial_code": "+505"
+  },
+  {
+    "value": "TWN",
+    "ko_name": "대만",
+    "en_name": "TAIWAN",
+    "dial_code": "+886"
+  },
+  {
+    "value": "DNK",
+    "ko_name": "덴마크",
+    "en_name": "DENMARK",
+    "dial_code": "+45"
+  },
+  {
+    "value": "DOM",
+    "ko_name": "도미니카공화국",
+    "en_name": "DOMINICAN REP",
+    "dial_code": "+1809"
+  },
+  {
+    "value": "DMA",
+    "ko_name": "도미니카연방",
+    "en_name": "DOMINICA",
+    "dial_code": "+1767"
+  },
+  {
+    "value": "DEU",
+    "ko_name": "독일",
+    "en_name": "GERMANY",
+    "dial_code": "+49"
+  },
+  {
+    "value": "USA",
+    "ko_name": "미국",
+    "en_name": "U S A",
+    "dial_code": "+1"
+  },
+  {
+    "value": "CHN",
+    "ko_name": "중국",
+    "en_name": "MAINLAND CHINA",
+    "dial_code": "+86"
+  },
+  {
+    "value": "PHL",
+    "ko_name": "필리핀",
+    "en_name": "PHILIPPINES",
+    "dial_code": "+63"
+  },
+  {
+    "value": "VNM",
+    "ko_name": "베트남",
+    "en_name": "VIET NAM",
+    "dial_code": "+84"
+  },
+  {
+    "value": "SGP",
+    "ko_name": "싱가포르",
+    "en_name": "SINGAPORE",
+    "dial_code": "+65"
+  },
+  {
+    "value": "HKG",
+    "ko_name": "홍콩",
+    "en_name": "HONG KONG",
+    "dial_code": "+852"
+  },
+  {
+    "value": "AUS",
+    "ko_name": "호주",
+    "en_name": "AUSTRALIA",
+    "dial_code": "+61"
+  }
+]

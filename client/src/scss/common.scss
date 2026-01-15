@@ -1,0 +1,462 @@
+/**************************************
+** COMMONS  
+**************************************/
+:root {
+    --color-main: rgb(211, 233, 46);
+    --color-nav-main: rgb(25, 37, 71);
+    --color-bk-main: #000;
+    --color-102: rgb(102, 102, 102); //헤더푸터에 사용하는 회색 폰트컬러
+    --color-153: rgb(153, 153, 153); // 로고, 배경
+    --color-181: rgb(181, 181, 181);
+    --color-242: rgb(242, 242, 242); //헤더 바텀
+
+    --borderlight: #dfe4eb;
+    --fontblack: #333333;
+    --darkblack: #222222;
+
+    --jinairgreen: #d3e92e;
+    --jinairnav: #192547;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: 'NotoSans-T';
+    src: url('../fonts/NotoSansKR-Thin.otf');
+}
+
+@font-face {
+    font-family: 'NotoSans-B';
+    src: url('../fonts/NotoSansKR-Bold.otf');
+}
+
+@font-face {
+    font-family: 'NotoSans-L';
+    src: url('../fonts/NotoSansKR-Light.otf');
+}
+
+@font-face {
+    font-family: 'NotoSans-M';
+    src: url('../fonts/NotoSansKR-Medium.otf');
+}
+
+@font-face {
+    font-family: 'NotoSans-R';
+    src: url('../fonts/NotoSansKR-Regular.otf');
+}
+
+* {
+    font-family: 'NotoSans-R';
+}
+
+.thin {
+    font-family: 'NotoSans-T';
+}
+
+.bold {
+    font-family: 'NotoSans-B';
+}
+
+.light {
+    font-family: 'NotoSans-L';
+}
+
+.medium {
+    font-family: 'NotoSans-M';
+}
+
+.header_outline,
+.content_outline,
+.footer_outline {
+    width: 100%;
+}
+
+.content_outline,
+.content {
+    position: relative;
+    background-color: #fff;
+}
+
+.header,
+.content,
+.footer {
+    width: 1280px;
+    margin: 0px auto;
+}
+
+/**************************************
+** HEADER- TOP 
+**************************************/
+.header_outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .header {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: 1px 1px 8px 3px #d8d8d8;
+
+        .header_content {
+            width: 1200px;
+            .header_top {
+                // height: 100px;
+                max-width: 1200px;
+                .header_top_menu1{
+                    // padding: 20px 0;
+                    // border: 1px solid red;
+                    .header_exchange{
+                        // border: 1px solid red;
+                        width: 230px;
+                        text-align: right;
+                        margin-left: 965px;
+                        h2{
+                            font-size: 15px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+                .header_top_menu {
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    color: var(--color-nav-main);
+
+                    button {
+                        border: 0;
+                        background-color: transparent;
+                    }
+
+                    .header_top_menu_item {
+                        position: relative;
+                    }
+                }
+
+                .header_top_menu {
+                    display: flex;
+                    max-width: 1200px;
+                    justify-content: space-between;
+                    z-index: 300;
+                    letter-spacing: -0.3px;
+                    align-items: center;
+
+                    .menu_list {
+                        ul {
+                            list-style: none;
+                            display: flex;
+
+                            li {
+                                min-width: 150px;
+                                max-width: 180px;
+                                font-weight: 400;
+                                font-size: 18px;
+                                text-align: center;
+                                color: #192547;
+                            }  
+                        }
+                    }
+                }
+
+                .header_local {
+                    display: flex;
+                    max-width: 1200px;
+                    justify-content: flex-end;
+                    z-index: 300;
+                    letter-spacing: -0.3px;
+                    align-items: center;
+
+                    span {
+                        color: var(--color-nav-main);
+                        font-family: 'NotoSans-T';
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**************************************
+** HEADER- BOTTOM
+**************************************/
+.header_bottom_menu_warp1,
+.header_bottom_menu_warp2,
+.header_bottom_menu_warp3,
+.header_bottom_menu_warp4 {
+    display: none; /* 기본적으로 숨김 */
+    border-top: solid 2px var(--color-242);
+}
+
+.header_bottom_menu_warp1.show,
+.header_bottom_menu_warp2.show,
+.header_bottom_menu_warp3.show,
+.header_bottom_menu_warp4.show {
+    display: block; /* 'show' 클래스가 있을 때만 보이게 */
+}
+
+.header_bottom_menu1, 
+.header_bottom_menu2, 
+.header_bottom_menu3, 
+.header_bottom_menu4 {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20;
+    color: var(--color-nav-main);
+    ul{
+        li{
+            margin-bottom: 10px;
+        }
+    }
+} 
+
+.menu_list li {
+    padding-bottom: 6px;
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .menu_list li:hover {
+    border-bottom: 2px solid #000;
+  }
+  
+
+/**************************************
+** main
+**************************************/
+.home_main_logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+.totop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    button {
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        align-items: center;
+        color: var(--color-nav-main);
+        background-color: #fff;
+        border: none;
+        box-shadow: -1px 4px 2px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+/**************************************
+** Footer 
+**************************************/
+.footer_outline {
+    padding-top: 30px;
+    border-top: 1px solid rgb(247, 247, 247);
+    background-color: var(--color-242);
+
+    .footer {
+        background-color: var(--color-242);
+
+        .footer_top {
+            color: var(--color-nav-main);
+            display: flex;
+            justify-content: space-between;
+
+            .footer_left {
+                .footer_menu {
+                    width: 600px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    ul {
+                        list-style: none;
+
+                        span {
+                            font-family: NotoSans-B;
+                        }
+
+                        li {
+                            font-family: NotoSans-L;
+                            margin: 10px 0 10px 0;
+
+                            .footer_menu_root {
+                                margin-top: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer_right {
+                .footer_right_warp {
+                    margin-bottom: 30px;
+                    padding-right: 20px;
+
+                    .footer_right_service {
+                        margin-bottom: 10px;
+
+                        span:last-child {
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .footer_right_time {
+                        span:last-child {
+                            margin-left: 10px;
+                        }
+                    }
+
+                }
+
+                .footer_sns {
+                    .footer_sns_icon {
+                        width: 200px;
+                        display: flex;
+                        justify-content: space-around;
+
+                        div {
+                            width: 50px;
+                            height: 50px;
+                            background-color: #fff;
+                            border-radius: 100px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_bottom {
+            width: 100%;
+            padding: 20px 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .footer_bottom_left {
+                width: 100%;
+
+                span,
+                p {
+                    font-family: NotoSans-L;
+                    color: var(--color-102)
+                }
+
+                .home_main_company {
+                    display: flex;
+
+                    .home_main_logo {
+                        top: 0;
+                        height: 21px;
+                        display: flex;
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            .footer_bottom_right {
+                .footer_bottom_partner_img {
+                    width: 300px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    img {
+                        width: 70px;
+                    }
+
+                    img:last-child {
+                        width: 90px;
+                    }
+                }
+
+                span {
+                    font-family: NotoSans-L;
+                    color: var(--color-153);
+                    margin: 20px 0 0 10px;
+                }
+            }
+        }
+    }
+}

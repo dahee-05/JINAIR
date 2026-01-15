@@ -1,0 +1,74 @@
+[
+    {
+      "id": "menu1",
+      "label": "예약",
+      "items": [
+        { "label": "예약안내", "icon": "IoMdAirplane" },
+        { "label": "항공권 예약" },
+        { "label": "예약/결제안내" },
+        { "label": "예약변경/취소/환불" },
+        { "label": "추천 항공권", "icon": "MdAirplaneTicket" },
+        { "label": "최저가항공권" },
+        { "label": "맞춤항공권" },
+        { "label": "운임 및 수수료", "icon": "IoIosPricetags" },
+        { "label": "국내선" },
+        { "label": "국제선" },
+        { "label": "할인", "icon": "RiDiscountPercentFill" },
+        { "label": "할인코드" },
+        { "label": "프로모션코드" },
+        { "label": "신분할인제도" },
+        { "label": "상용우대 프로그램" }
+      ]
+    },
+    {
+      "id": "menu2",
+      "label": "프로모션/제휴",
+      "items": [
+        { "label": "이벤트", "icon": "PiCalendarStarFill" },
+        { "label": "진행중" },
+        { "label": "종료" },
+        { "label": "당첨자 발표" },
+        { "label": "제휴", "icon": "LuHeartHandshake" },
+        { "label": "차량" },
+        { "label": "호텔" },
+        { "label": "여행보험" },
+        { "label": "현지투어/통신" },
+        { "label": "카드/환전" },
+        { "label": "지니 보딩패스" }
+      ]
+    },
+    {
+      "id": "menu3",
+      "label": "부가서비스",
+      "items": [
+        { "label": "부가서비스 안내", "icon": "LuPackagePlus" },
+        { "label": "묶음 할인", "icon": "IoIosGift" },
+        { "label": "좌석", "icon": "PiSeatFill" },
+        { "label": "수하물", "icon": "BsSuitcase2Fill" },
+        { "label": "기내식", "icon": "FaUtensils" },
+        { "label": "여행보험", "icon": "AiFillSafetyCertificate" },
+        { "label": "JINI PET", "icon": "MdOutlinePets" }
+      ]
+    },
+    {
+      "id": "menu4",
+      "label": "운항정보",
+      "items": [
+        { "label": "출도착 안내", "icon": "PiAirplaneInFlightFill" },
+        { "label": "구간 조회" },
+        { "label": "편명 조회" },
+        { "label": "스케줄 조회", "icon": "FaCalendarCheck" },
+        { "label": "왕복" },
+        { "label": "편도" },
+        { "label": "취항 노선 안내", "icon": "FaEarthAsia" },
+        { "label": "국내선" },
+        { "label": "국제선" }
+      ]
+    },
+    {
+      "id": "menu5",
+      "label": "전체메뉴",
+      "items": []
+    }
+  ]
+  

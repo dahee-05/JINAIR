@@ -1,0 +1,3154 @@
+:root {
+    --color-main: rgb(211, 233, 46);
+    --color-nav-main: rgb(25, 37, 71);
+    --color-bk-main: #000;
+    --color-153: rgb(153, 153, 153);
+    --color-181: rgb(181, 181, 181);
+    --color-242: rgb(242, 242, 242);
+    --chatBlue: rgb(0, 99, 177);
+    --borderlight: #dfe4eb;
+    --fontblack: #333333;
+    --darkblack: #222222;
+
+    --jinairgreen: #d3e92e;
+    --jinairnav: #192547;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+}
+
+.main-top-box {
+    width: 100%;
+    position: relative;
+    left: -110px;
+
+    // border: 1px solid red;
+    .main-top-img {
+        height: 440px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .main-top-img2 {
+        height: 400px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .main-bottom-depart-check {
+        background-color: var(--color-nav-main);
+        // border: 1px solid red;
+        color: white;
+        padding: 30px 100px;
+        height: 100px;
+
+    }
+}
+
+.main-top-search-all {
+    margin: 0 auto;
+    width: 1200px;
+    height: 350px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+
+    // background-color: white;
+    .main-top-search-bottom2 {
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+        padding: 40px 80px;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+
+            li {
+                width: 100%;
+
+                p {
+                    color: white;
+                    font-weight: 100;
+                    font-size: 13px;
+                }
+
+                label {
+                    display: block;
+                    color: var(--color-nav-main);
+                    margin-bottom: 15px;
+                    font-weight: 100;
+                    font-size: 15px;
+                }
+
+                input,
+                select {
+                    width: 220px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 1px solid var(--color-181);
+                }
+
+                select {
+                    width: 250px;
+                    padding: 9px;
+                }
+
+                input:focus {
+                    border: 2px solid #d3e92e;
+                }
+
+            }
+        }
+
+        div:nth-child(2) {
+            // background-color: red;
+            display: flex;
+
+            p {
+                color: red;
+                padding: 0 5px;
+                font-weight: 100;
+                font-size: 14px;
+            }
+
+            p:nth-child(2) {
+                margin-left: 105px;
+            }
+
+            p:nth-child(3) {
+                margin-left: 30px;
+            }
+
+            p:nth-child(4) {
+                margin-left: 30px;
+            }
+        }
+
+        div:last-child {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+
+            ul {
+                list-style-type: none;
+                width: 500px;
+                display: block;
+
+                li {
+                    font-size: 11px;
+                    color: var(--color-153);
+                }
+            }
+
+            button {
+                width: 513px;
+                margin-left: 25px;
+                padding: 13px;
+                border-radius: 8px;
+                border: 1px solid var(--color-nav-main);
+                background-color: var(--color-nav-main);
+                color: white;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .main-top-search-bottom3 {
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+        padding: 40px 80px;
+
+        .active-calendar-input {
+            color: var(--color-nav-main);
+            font-size: 14px;
+            font-weight: 100;
+            margin-left: 10px;
+            outline: none;
+            border: none;
+            width: 100px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+
+            li {
+                width: 100%;
+
+                p {
+                    color: white;
+                    font-weight: 100;
+                    font-size: 13px;
+
+                }
+
+                label {
+                    display: block;
+                    color: var(--color-nav-main);
+                    margin-bottom: 15px;
+                    font-weight: 100;
+                    font-size: 15px;
+                }
+
+                input:not(.active-calendar-input) {
+                    width: 220px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 1px solid var(--color-181);
+                }
+
+                >div {
+                    width: 220px;
+                    padding: 7px;
+                    height: 25px;
+                    border-radius: 5px;
+                    border: 1px solid var(--color-181);
+                    text-align: right;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .main-top-search-bottom3-icon {
+                        margin-right: 10px;
+                    }
+                }
+
+                >div:hover {
+                    cursor: pointer;
+                }
+
+                input:focus {
+                    border: 2px solid #d3e92e;
+                }
+            }
+        }
+
+        >div:last-child {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+
+            ul {
+                list-style-type: none;
+                width: 500px;
+                display: block;
+
+                li {
+                    font-size: 11px;
+                    color: var(--color-153);
+                }
+            }
+
+            button {
+                width: 513px;
+                margin-left: 25px;
+                padding: 13px;
+                border-radius: 8px;
+                border: 1px solid var(--color-nav-main);
+                background-color: var(--color-nav-main);
+                color: white;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .main-top-search-bottom1 {
+        background-color: white;
+        border-radius: 0 0 10px 10px;
+        padding: 30px 80px;
+
+        .active-departure-country,
+        .active-arrive-country {
+            color: var(--color-nav-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .main-top-search-bottom-main-bottom {
+            display: flex;
+            align-items: center;
+
+            h5 {
+                font-size: 16px;
+                font-weight: 100;
+            }
+
+            h5:hover {
+                cursor: pointer;
+            }
+
+            div:hover {
+                cursor: pointer;
+            }
+
+            >div {
+                width: 520px;
+                border-bottom: 1px solid var(--color-153);
+                margin-right: 20px;
+
+                >div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px 0;
+
+                    >span {
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+
+                        h3:not(.active-calendar-date) {
+                            margin-left: 10px;
+                            font-weight: 600;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .main-top-search-bottom-main-middle-icon {
+                        font-size: 25px;
+                        margin-right: 17px;
+                        color: var(--color-153);
+                    }
+                }
+            }
+
+            >button {
+                width: 500px;
+                padding: 10px 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--color-nav-main);
+                border-radius: 10px;
+                border: none;
+                margin-top: 30px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+
+        .main-top-search-bottom-main-middle3 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .active-calendar-date {
+                color: var(--color-nav-main);
+                font-size: 16px;
+                font-weight: 100;
+                margin-left: 10px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2 {
+                font-size: 25px;
+                padding-top: 20px;
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2:hover {
+                cursor: pointer;
+            }
+
+            >div:first-child {
+                color: var(--color-153);
+            }
+
+            >div:nth-child(3) {
+                color: var(--color-153);
+                // border: 1px solid red;
+                margin-right: 20px;
+            }
+
+            >div:nth-child(4) {
+
+                // border: 1px solid red;
+                h3:not(.active-calendar-date) {
+                    font-size: 16px;
+                    font-weight: 100;
+                    color: var(--color-153);
+                    margin-left: 10px;
+                }
+            }
+
+            >div:nth-child(5) {
+                h3:not(.active-calendar-date) {
+                    font-size: 16px;
+                    font-weight: 100;
+                    // color: var(--color-153);
+                    margin-left: 10px;
+                }
+            }
+
+            >div {
+                border-bottom: 1px solid var(--color-153);
+                width: 230px;
+
+                >h5 {
+                    font-size: 16px;
+                    font-weight: 100;
+                    margin-bottom: 3px;
+                }
+
+                >div:hover {
+                    cursor: pointer;
+                }
+
+                >div {
+                    // border: 1px solid blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // border: 1px solid red;
+                    height: 40px;
+
+                    // padding-bottom: 10px;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 10px;
+                    }
+
+                    >h3:not(.active-calendar-date) {
+                        font-size: 23px;
+                        padding-bottom: 10px;
+                    }
+
+                    .main-top-search-bottom-main-middle-icon {
+                        font-size: 25px;
+                        margin-right: 20px;
+                        color: var(--color-153);
+                    }
+                }
+            }
+        }
+
+        .main-top-search-bottom-main-middle2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .active-calendar-date {
+                color: var(--color-nav-main);
+                font-size: 16px;
+                font-weight: 100;
+                margin-left: 10px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2 {
+                font-size: 25px;
+                padding-top: 20px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2:hover {
+                cursor: pointer;
+            }
+
+            >div:first-child {
+                color: var(--color-153);
+            }
+
+            >div:nth-child(3) {
+                color: var(--color-153);
+            }
+
+            >div:nth-child(4) {
+                h3:not(.active-calendar-date) {
+                    font-size: 16px;
+                    font-weight: 100;
+                    color: var(--color-153);
+                    margin-left: 10px;
+                }
+            }
+
+            >div:nth-child(5) {
+                h3:not(.active-calendar-date) {
+                    font-size: 15px;
+                    font-weight: 600;
+                    // color: var(--color-153);
+                    margin-left: 10px;
+                }
+            }
+
+            >div {
+                border-bottom: 1px solid var(--color-153);
+                width: 230px;
+
+                >h5 {
+                    font-size: 16px;
+                    font-weight: 100;
+                    margin-bottom: 3px;
+                }
+
+                >div:hover {
+                    cursor: pointer;
+                }
+
+                >div {
+                    // border: 1px solid blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // border: 1px solid red;
+                    height: 40px;
+
+                    // padding-bottom: 10px;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 10px;
+                    }
+
+                    >h3:not(.active-calendar-date) {
+                        font-size: 23px;
+                        padding-bottom: 10px;
+                    }
+
+                    .main-top-search-bottom-main-middle-icon {
+                        font-size: 25px;
+                        margin-right: 20px;
+                        color: var(--color-153);
+                    }
+                }
+            }
+        }
+
+        .main-top-search-bottom-main-bottom2 {
+            >button {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--color-nav-main);
+                border-radius: 10px;
+                border: none;
+                margin-top: 30px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+
+        .main-top-search-bottom-main-middle {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .active-calendar-date {
+                color: var(--color-nav-main);
+                font-size: 15px;
+                margin-left: 10px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2 {
+                font-size: 25px;
+                padding-top: 20px;
+            }
+
+            .main-top-search-bottom-main-middle-icon2:hover {
+                cursor: pointer;
+            }
+
+            >div:not(:last-child) {
+                border-bottom: 1px solid var(--color-153);
+                width: 240px;
+                color: var(--color-153);
+            }
+
+            >div:last-child {
+                margin-left: 10px;
+                border-bottom: 1px solid var(--color-153);
+                width: 500px;
+
+                h5 {
+                    padding-bottom: 8px;
+                }
+
+                span {
+                    // border: 1px solid red;
+                    display: flex;
+                    align-items: center;
+
+                    h3:not(.active-calendar-date) {
+                        font-size: 15px;
+                        margin-left: 10px;
+                        color: var(--color-153);
+                    }
+                }
+            }
+
+            >div {
+
+                h5,
+                h3:last-child {
+                    font-weight: 100;
+                }
+
+                h5 {
+                    font-size: 16px;
+                }
+
+                h5:hover,
+                h3:hover,
+                div:hover {
+                    cursor: pointer;
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    .main-top-search-bottom-main-middle-icon {
+                        font-size: 25px;
+                        margin-right: 20px;
+                        color: var(--color-153);
+                    }
+
+                }
+
+                h3:not(:last-child) {
+                    font-size: 23px;
+                }
+            }
+
+        }
+
+        .main-top-search-bottom-main-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .main-top-search-bottom-tab-active {
+                    border: 1px solid var(--color-nav-main);
+                    font-weight: 600;
+                }
+
+                .main-top-search-bottom-tab-none {
+                    border: 1px solid var(--color-181);
+                }
+
+                li {
+                    color: var(--color-nav-main);
+                    padding: 3px 10px;
+                    border-radius: 20px;
+                    font-size: 15px;
+                }
+
+                li:hover {
+                    cursor: pointer;
+                }
+            }
+
+            div {
+                border: 1px solid var(--color-181);
+                display: flex;
+                align-items: center;
+                padding: 0px 5px;
+                color: var(--color-181);
+
+                input {
+                    padding: 5px;
+                    border: none;
+                }
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .main-top-search-btns {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        button {
+            width: 400px;
+            padding: 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            span {
+                margin-left: 10px;
+                text-align: center;
+            }
+
+            .main-top-search-icons1 {
+                padding-left: 170px;
+            }
+
+            .main-top-search-icons2 {
+                padding-left: 160px;
+            }
+
+            .main-top-search-icons3 {
+                padding-left: 145px;
+            }
+        }
+
+        .main-top-search-btns-active {
+            background-color: var(--color-nav-main);
+            color: white;
+            border: 1px solid var(--color-nav-main);
+        }
+
+        .main-top-search-btns-none {
+            border: 1px solid var(--borderlight);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--color-nav-main);
+        }
+    }
+
+    .main-bottom-depart-check-middle {
+        margin: 0 auto;
+        padding: 20px 0;
+        color: white;
+        width: 1000px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            // border: 1px solid white;
+            margin-right: 18px;
+        }
+
+        div>h4 {
+            color: rgb(211, 233, 46);
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        div>h5 {
+            font-weight: 300;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            gap: 30px;
+            // border: 1px solid white;
+            width: 760px;
+        }
+
+        ul>li {
+            width: 100%;
+            text-align: left;
+            padding-bottom: 15px;
+            border-bottom: 1px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >span>span {
+                margin-left: 10px;
+            }
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+.main-search-modal-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+.main-search-country-all {
+    background-color: white;
+    width: 900px;
+    border: 1px solid var(--color-153);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 25px 0 0 0;
+
+    >div:first-child {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--jinairgreen);
+        align-items: center;
+        font-size: 20px;
+        padding: 0 30px 20px 30px;
+
+        >span {
+            font-weight: 600;
+            color: var(--color-nav-main);
+        }
+
+        .main-search-country-icon2:hover {
+            cursor: pointer;
+        }
+    }
+
+    div:nth-child(2):focus-within {
+        border: 2px solid var(--jinairgreen);
+    }
+
+    >div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 23px;
+        padding: 5px 30px;
+
+        >input {
+            width: 780px;
+            border: none;
+            outline: none;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .main-search-country-icon {
+            color: var(--color-153);
+        }
+
+        .main-search-country-icon:hover {
+            cursor: pointer;
+        }
+    }
+
+    >div:nth-child(3) {
+        color: var(--color-nav-main);
+        display: flex;
+        width: 100%;
+
+        >div:nth-child(2) {
+            width: 210px;
+        }
+
+        >div {
+            border-right: 1px solid var(--color-242);
+            width: 175px;
+
+            span {
+                background-color: var(--color-242);
+                display: block;
+                padding: 7px 30px;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            ul {
+                padding-bottom: 10px;
+            }
+
+            li {
+                list-style-type: none;
+                padding: 7px 30px;
+                font-size: 12px;
+                font-weight: 100;
+            }
+
+            .test {
+                color: var(--color-181);
+                pointer-events: none;
+                /* 클릭 비활성화 */
+            }
+
+            li:hover {
+                background-color: var(--color-242);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main-search-people-modal-all {
+    background-color: white;
+    width: 650px;
+    border: 1px solid var(--color-153);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 25px 0 0 0;
+    color: var(--color-nav-main);
+
+    >div:first-child {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--jinairgreen);
+        align-items: center;
+        font-size: 18px;
+        padding: 0 30px 20px 30px;
+
+        >span {
+            font-weight: 600;
+            color: var(--color-nav-main);
+        }
+
+        .main-search-country-icon2:hover {
+            cursor: pointer;
+        }
+    }
+
+    >span {
+        font-size: 12px;
+        padding: 0 30px;
+        display: block;
+        font-weight: 100;
+    }
+
+    >span:nth-child(2) {
+        font-size: 12px;
+        padding: 30px;
+    }
+
+    >div:nth-child(3) {
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        margin-bottom: 15px;
+
+        >div {
+            // border: 1px solid blue;
+            width: 180px;
+
+            >div {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: space-between;
+                background-color: rgb(237, 238, 241);
+                padding: 7px 20px;
+                border-radius: 5px;
+
+                >input {
+                    width: 45px;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(237, 238, 241);
+                    font-size: 25px;
+                    font-weight: 700;
+                    text-align: center;
+                    // border: 1px solid red;
+                }
+
+                >button {
+                    border: none;
+                    outline: none;
+                    // border: 1px solid red;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+            }
+
+            >span {
+                margin-bottom: 5px;
+                display: flex;
+                align-items: center;
+
+                // border: 1px solid red;
+                .main-search-people-icon {
+                    margin-top: 3px;
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+
+    >div:nth-child(6) {
+        // border: 1px solid red;
+        margin-top: 30px;
+        padding: 0 30px;
+        font-size: 14px;
+        font-weight: 100;
+
+        >span {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    >div:nth-child(7) {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 40px;
+
+        >button {
+            text-align: center;
+            padding: 10px 60px;
+            background-color: var(--color-nav-main);
+            color: white;
+            border: 1px solid var(--color-nav-main);
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.main-search-calendar-all {
+    background-color: white;
+    width: 1100px;
+    border: 1px solid var(--color-153);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    color: var(--color-nav-main);
+
+    >div:first-child {
+        border-bottom: 2px solid var(--jinairgreen);
+        padding: 0 35px 5px;
+
+        >div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        >span {
+            // border: 1px solid red;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            font-size: 12px;
+            margin-left: 560px;
+            color: var(--color-153);
+
+            .main-search-calendar-icon {
+                font-size: 17px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    >div:nth-child(2) {
+        // border: 1px solid red;
+        height: 400px;
+        // margin: 0 auto;
+        text-align: center;
+        padding: 0 10px;
+        // padding: 0 70px;
+        // width: 900px;
+    }
+
+    >span {
+        // border: 1px solid red;
+        display: block;
+        text-align: right;
+        padding: 0 90px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+}
+
+// *******************************************
+// 달력 커스텀
+// *******************************************
+.react-datepicker {
+    border: 1px solid white !important;
+}
+
+.react-datepicker__month-container {
+    width: 539px !important;
+}
+
+.react-datepicker__header {
+    padding: 25px 0 8px !important;
+    background-color: white !important;
+    width: 100% !important;
+    border-bottom: 1px solid white !important;
+}
+
+.react-datepicker__current-month {
+    font-size: 19px;
+    color: var(--color-nav-main);
+}
+
+.react-datepicker__day-name {
+    padding: 10px 13px 0;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.166rem;
+    font-size: 15px;
+}
+
+.react-datepicker__day,
+.react-datepicker__time-name {
+    padding: 8px 13px;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.166rem;
+    font-size: 15px;
+}
+
+h2.react-datepicker__current-month {
+    font-size: 20px;
+    color: var(--color-nav-main);
+}
+
+.react-datepicker__day-names {
+    >.react-datepicker__day-name:first-child {
+        color: rgb(245, 132, 96);
+    }
+
+    >.react-datepicker__day-name {
+        color: var(--color-153);
+    }
+
+    >.react-datepicker__day-name:last-child {
+        color: rgb(69, 151, 255);
+    }
+}
+
+.react-datepicker__week {
+    >.react-datepicker__day:nth-child(1) {
+        color: rgb(245, 132, 96);
+    }
+
+    >.react-datepicker__day:last-child {
+        color: rgb(69, 151, 255);
+    }
+}
+
+.react-datepicker__navigation {
+    top: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+// 제이드 챗봇
+.chatbot {
+    // border: 2px solid red;
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+
+    button {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: var(--color-nav-main);
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .chatbot-icon {
+        font-size: 20px;
+        color: var(--jinairgreen);
+        margin: 0;
+        padding: 0;
+
+    }
+
+    span {
+        display: block;
+        color: var(--jinairgreen);
+        font-size: 14px;
+        margin: -5px;
+        padding: 0;
+    }
+}
+
+.chat-modal-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+
+    .chatbot-main::-webkit-scrollbar {
+        display: none;
+    }
+
+    .chat-country-all {
+        background-color: white;
+        width: 600px;
+        height: auto;
+        border-radius: 5px;
+        margin: 0 auto;
+
+        .chatbot-top {
+            background-color: var(--color-nav-main);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px;
+
+            span {
+                font-weight: 100;
+                letter-spacing: 1px;
+            }
+        }
+
+        .chatbot-main {
+            text-align: center;
+            padding: 40px 30px 0;
+            height: 600px;
+            overflow: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            .chatbot-main-top-box {
+                border: 1px solid gainsboro;
+                border-radius: 10px;
+                margin: 0 auto;
+                width: 450px;
+
+                .chatbot-main-top-box-icon {
+                    margin-top: 50px;
+                    margin-bottom: 10px;
+                }
+
+                h5 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+
+                ul {
+                    margin-top: 23px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    text-align: center;
+                    justify-content: center;
+                    gap: 15px;
+                    margin-bottom: 10px;
+
+                    li:hover {
+                        cursor: pointer;
+                        border: 1px solid var(--color-nav-main);
+                    }
+
+                    li {
+                        width: 130px;
+                        height: 130px;
+                        border: 1px solid rgb(242, 242, 242);
+
+                        img {
+                            width: 130px;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chatbot-main-bottom-box {
+    // border: 1px solid red;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 0 30px;
+
+        li:hover {
+            cursor: pointer;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            border: 2px solid rgb(0, 99, 177);
+            border-radius: 20px;
+            font-size: 14px;
+            padding: 3px 15px;
+
+            img {
+                width: 30px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.chatbot-bottom-box {
+    border-top: 1px solid gainsboro;
+    padding: 15px 0;
+    width: 600px;
+
+    input {
+        border: none;
+        font-size: 16px;
+        width: 100%;
+        padding: 5px 0;
+        outline: none;
+    }
+}
+
+.chatbot-tab-click {
+    border: 1px solid gainsboro;
+    width: 450px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+//***********************************
+// chatbot schedule
+// *******************************
+.schedule-top-box {
+    border-bottom: 1px solid gainsboro;
+    padding: 10px 0;
+}
+
+.schedule-country-check-box {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+    padding: 0 10px;
+
+    select {
+        width: 155px;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    select:nth-child(2) {
+        margin-right: 10px;
+    }
+
+    span {
+        color: rgb(0, 99, 177);
+        width: 100px;
+    }
+}
+
+.schedule-calendar-check-box {
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 10px;
+
+    span {
+        color: rgb(0, 99, 177);
+        width: 100px;
+    }
+
+    select {
+        width: 320px;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    input {
+        width: 316px;
+        padding: 10px 0;
+    }
+}
+
+.schedule-all-box {
+    border: 1px solid gainsboro;
+    width: 450px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    .schedule-button-box {
+        padding: 0 10px;
+        margin-top: 20px;
+        border-top: 1px solid gainsboro;
+        margin-bottom: 10px;
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.schedule-all-box {
+    border: 1px solid gainsboro;
+    width: 450px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.schedule-exist-box {
+    padding: 10px 0;
+
+    p {
+        border-bottom: 1px solid gainsboro;
+        padding-bottom: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-top: 10px;
+        // border: 1px solid red;
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: 100;
+
+        tr:not(:first-child, :nth-child(2)) {
+            color: var(--chatBlue);
+        }
+
+        td {
+            padding: 3px 0;
+            width: 150px;
+        }
+
+        tr:first-child {
+            padding: 5px 50px;
+            font-size: 17px;
+            color: var(--chatBlue);
+
+            .schedule-exist-top-icon {
+                font-size: 30px;
+            }
+        }
+    }
+
+    // 
+    >div:nth-child(3) {
+        // border: 1px solid red;
+        text-align: right;
+        font-size: 13px;
+        font-weight: 100;
+        padding: 0 5px;
+    }
+
+    >div:nth-child(4) {
+        padding: 0 10px;
+
+        button {
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.schedule-none-exist-box {
+    padding: 10px 0;
+}
+
+//***********************************
+// chatbot airplane
+// *******************************
+.airplane-country-table {
+    padding: 0 20px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    // border: 1px solid red;
+    margin-bottom: 10px;
+    width: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: 100;
+
+    tr:first-child {
+        color: var(--chatBlue);
+    }
+
+    td {
+        padding: 3px 0;
+        width: 130px;
+    }
+
+    tr:first-child {
+        padding: 5px 50px;
+        font-size: 17px;
+        color: var(--chatBlue);
+
+        .schedule-exist-top-icon {
+            font-size: 30px;
+        }
+    }
+}
+
+.airplane-all-box {
+    padding: 0 10px;
+
+    >div:first-child {
+        >p {
+            margin-top: 10px;
+        }
+
+        div {
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+            button {
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    >div:nth-child(2)>div:first-child {
+        border-bottom: 1px solid gainsboro;
+        margin: 10px 0 20px 0;
+        padding-bottom: 10px;
+    }
+
+    >div:nth-child(2)>div:last-child {
+        padding: 0 10px;
+
+        button {
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.airplane-airNumClick {
+    >div:first-child {
+        p {
+            margin-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        table {
+            padding: 0 20px;
+            border-collapse: collapse;
+            margin-top: 10px;
+            // border: 1px solid red;
+            margin-bottom: 10px;
+            width: 400px;
+            margin: 0 auto;
+            font-size: 15px;
+            font-weight: 100;
+
+            tr:first-child {
+                color: var(--chatBlue);
+            }
+
+            td {
+                padding: 3px 0;
+                width: 130px;
+            }
+
+            tr:first-child {
+                padding: 5px 50px;
+                font-size: 17px;
+                color: var(--chatBlue);
+
+                .schedule-exist-top-icon {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        div:last-child {
+            padding: 0 10px;
+
+            button {
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+//***********************************
+// chatbot reservation
+// *******************************
+
+.reservation-all-box {
+    .reservation-exist {
+        margin: 0 auto;
+        margin-top: 10px;
+        text-align: center;
+
+        li:first-child {
+            margin-top: 5px;
+        }
+
+        li {
+            list-style-type: none;
+            padding: 3px 0;
+            width: 250px;
+            margin-left: 120px;
+            display: flex;
+        }
+
+        span:first-child {
+            // border: 1px solid red;
+            color: var(--chatBlue);
+            width: 70px;
+            margin-right: 10px;
+        }
+    }
+
+    >div:last-child {
+
+        // padding: 0 10px;
+        p {
+            margin-top: 10px;
+        }
+
+        .cheap-button-box {
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+            button {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    >div:nth-child(2) {
+        // border: 1px solid gainsboro;
+        width: 450px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 20px;
+
+        div {
+            padding: 5px 0;
+
+            span:not(.reservation-exist) {
+                border: 1px solid gainsboro;
+                font-size: 15px;
+                width: auto;
+                padding: 5px 8px;
+                border-radius: 8px;
+            }
+
+            p {
+                border: 1px solid gainsboro;
+                font-size: 15px;
+                width: 340px;
+                padding: 5px 8px;
+                border-radius: 8px;
+            }
+        }
+
+        div:nth-child(1),
+        div:nth-child(3),
+        div:nth-child(5) {
+            text-align: left;
+        }
+
+        div:nth-child(2),
+        div:nth-child(4),
+        div:nth-child(6) {
+            text-align: right;
+        }
+    }
+
+    >div:first-child {
+        p {
+            margin-top: 10px;
+        }
+
+        .reservation-button-box {
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+            button {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .reservation-button2-box {
+        padding: 0 10px;
+        margin-bottom: 10px;
+
+        p {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+//***********************************
+// chatbot cheap
+// *******************************
+.cheap-all-box {
+    >div:nth-child(1) {
+        border: 1px solid red;
+    }
+
+    >div:nth-child(6) {
+        >div:last-child {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 100;
+            margin-bottom: 10px;
+        }
+
+        .cheap-cheap-month {
+            margin-top: 10px;
+            border-top: 1px solid gainsboro;
+            padding: 0 30px;
+
+            h5 {
+                font-size: 17px;
+                font-weight: 100;
+                color: rgb(84, 162, 84);
+                margin-bottom: 10px;
+            }
+
+            .cheap-cheap-month-middle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    background-color: rgb(0, 120, 215);
+                    color: white;
+                    border: none;
+                    padding: 7px 25px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+
+                ul {
+                    // border: 1px solid blue;
+                    width: 200px;
+                    font-size: 15px;
+
+                    li:nth-child(2) {
+                        font-size: 13px;
+                    }
+
+                    li:nth-child(3) {
+                        font-weight: 600;
+                        font-size: 16px;
+                        margin-top: 3px;
+                    }
+
+                    li:nth-child(4) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        >p {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 100;
+        }
+
+        >div:first-child {
+            margin-top: 10px;
+            font-size: 17px;
+
+            >span {
+                span {
+                    color: red;
+                }
+            }
+        }
+
+        >div:nth-child(2) {
+            color: var(--chatBlue);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            >span {
+                width: 150px;
+                // border: 1px solid red;
+                font-size: 22px;
+            }
+
+            .cheap-icon {
+                font-size: 30px;
+                width: 150px;
+            }
+        }
+
+        >div:nth-child(3) {
+            font-size: 14px;
+        }
+
+        .cheap-reservation {
+            // border: 1px solid red;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+
+            >div:first-child {
+                text-align: left;
+            }
+
+            >div:last-child {
+                button {
+                    background-color: rgb(0, 120, 215);
+                    color: white;
+                    border: none;
+                    padding: 7px 25px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+            }
+
+            ul {
+                // border: 1px solid blue;
+                width: 200px;
+
+                li {
+                    display: flex;
+                    font-weight: 600;
+                    font-size: 15px;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                }
+
+                li:nth-child(2) {
+                    font-weight: 100;
+                    border-bottom: 1px solid gainsboro;
+                }
+            }
+        }
+    }
+
+    >div:nth-child(5) {
+        ul {
+            margin-top: 10px;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+
+        >p {
+            // margin-top: 10px;
+            border: none;
+        }
+    }
+
+    >div:nth-child(4) {
+        >p {
+            margin-top: 10px;
+            border: none;
+        }
+
+        ul {
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            display: flex;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                // border:1px solid red;
+                width: 100px;
+                text-align: center;
+                color: var(--chatBlue);
+            }
+
+            select {
+                // border: 1px solid red;
+                padding: 10px 0;
+                width: 350px;
+            }
+
+        }
+    }
+
+    >div:nth-child(3) {
+        >p {
+            margin-top: 10px;
+            border: none;
+        }
+    }
+
+    >div:nth-child(2) {
+        border: 1px solid gainsboro;
+        width: 450px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 20px;
+
+        >p {
+            margin-top: 10px;
+            border: none;
+        }
+
+        .cheap-button-box {
+            padding: 0 10px;
+            margin-top: 10px;
+            border-top: 1px solid gainsboro;
+            margin-bottom: 10px;
+
+            button {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    >div:first-child {
+        border: 1px solid gainsboro;
+        width: 450px;
+        border-radius: 5px;
+        margin: 0 auto;
+        margin-top: 20px;
+
+        >p {
+            margin-top: 10px;
+            border: none;
+        }
+
+        .schedule-button-box {
+            padding: 0 10px;
+            margin-top: 10px;
+            border-top: 1px solid gainsboro;
+            margin-bottom: 10px;
+
+            button {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .schedule-all-box {
+        .cheap-button-box {
+            padding: 0 10px;
+            margin-top: 10px;
+            border-top: 1px solid gainsboro;
+            margin-bottom: 10px;
+
+            button {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px 0;
+                border: 1px solid rgb(0, 255, 255);
+                background-color: white;
+                border-radius: 8px;
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.cheap-round-desc {
+    margin-top: 15px;
+}
+
+.cheap-round-before-select {
+    margin-bottom: 5px;
+
+    >span {
+        display: block;
+
+        span {
+            color: red;
+        }
+    }
+}
+
+//***********************************
+// chatbot Buyticket
+// *******************************
+.chatbot-buyticket-all-box {
+    .buyticket-none {
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+    .schedule-all-box {
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .cheap-button-box {
+        padding: 0 10px;
+        margin-top: 10px;
+        border-top: 1px solid gainsboro;
+        margin-bottom: 10px;
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+
+    .buyticket-oneway-people-box {
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        padding: 0 18px;
+        justify-content: space-between;
+        text-align: center;
+
+        li {
+            list-style-type: none;
+
+            select {
+                width: 80px;
+                padding: 10px 0;
+                margin-left: 10px;
+            }
+
+            label {
+                color: var(--chatBlue);
+            }
+        }
+    }
+
+    >div:nth-child(3) {
+
+        // border: 1px solid red;
+        >div:last-child {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 100;
+            margin-bottom: 10px;
+        }
+
+        .cheap-cheap-month {
+            margin-top: 10px;
+            border-top: 1px solid gainsboro;
+            padding: 0 30px;
+
+            h5 {
+                font-size: 17px;
+                font-weight: 100;
+                color: rgb(84, 162, 84);
+                margin-bottom: 10px;
+            }
+
+            .cheap-cheap-month-middle {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    background-color: rgb(0, 120, 215);
+                    color: white;
+                    border: none;
+                    padding: 7px 25px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+
+                ul {
+                    // border: 1px solid blue;
+                    width: 200px;
+                    font-size: 15px;
+
+                    li:nth-child(2) {
+                        font-size: 13px;
+                    }
+
+                    li:nth-child(3) {
+                        font-weight: 600;
+                        font-size: 16px;
+                        margin-top: 3px;
+                    }
+
+                    li:nth-child(4) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        >p {
+            margin-top: 10px;
+            font-weight: 100;
+        }
+
+        >div:first-child {
+            margin-top: 10px;
+            font-size: 17px;
+
+            >span {
+                span {
+                    color: red;
+                }
+            }
+        }
+
+        >div:nth-child(2) {
+            color: var(--chatBlue);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            >span {
+                width: 150px;
+                // border: 1px solid red;
+                font-size: 22px;
+            }
+
+            .cheap-icon {
+                font-size: 30px;
+                width: 150px;
+            }
+        }
+
+        >div:nth-child(3) {
+            font-size: 14px;
+        }
+
+        .cheap-reservation {
+            // border: 1px solid red;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+
+            >div:first-child {
+                text-align: left;
+            }
+
+            >div:last-child {
+                button {
+                    background-color: rgb(0, 120, 215);
+                    color: white;
+                    border: none;
+                    padding: 7px 25px;
+                    border-radius: 10px;
+                    font-size: 16px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+            }
+
+            ul {
+                // border: 1px solid blue;
+                width: 200px;
+
+                li {
+                    display: flex;
+                    font-weight: 600;
+                    font-size: 15px;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                }
+
+                li:nth-child(2) {
+                    font-weight: 100;
+                    border-bottom: 1px solid gainsboro;
+                }
+            }
+        }
+    }
+}
+
+//***********************************
+// chatbot question
+// *******************************
+.chatbot-question-all-box {
+    .schedule-all-box {
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .cheap-button-box {
+        padding: 0 10px;
+        margin-top: 10px;
+        border-top: 1px solid gainsboro;
+        margin-bottom: 10px;
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+
+    .cheap-button-box1 {
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+
+}
+
+//***********************************
+// chatbot check
+// *******************************
+.chatbot-check-all-box {
+    .schedule-all-box {
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .cheap-button-box {
+        padding: 0 10px;
+        margin-top: 10px;
+        border-top: 1px solid gainsboro;
+        margin-bottom: 10px;
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid rgb(0, 255, 255);
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    }
+
+    >div:nth-child(3) {
+
+        // border: 1px solid red;
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// 일대일 챗봇
+.real-chatbot-box {
+    width: 450px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+    // border: 1px solid red;
+}
+
+.react-chatbot-kit-chat-container {
+    // 전체
+    width: 100% !important;
+}
+
+.react-chatbot-kit-chat-inner-container {
+    width: 100% !important;
+    // 전체
+    // border: 1px solid orange;
+
+}
+
+.react-chatbot-kit-chat-header {
+    background-color: white !important;
+    border: none !important;
+    color: white !important;
+    // 챗봇채팅창 이름
+    // border: 1px solid yellow;
+}
+
+.react-chatbot-kit-chat-input-container {
+    //메세지입력창 아이콘전체
+    width: 100% !important;
+}
+
+.react-chatbot-kit-chat-message-container {
+    // 봇과 내가 대화한 전체
+}
+
+.react-chatbot-kit-chat-input {
+    // 입력 인풋창
+    width: 400px;
+}
+
+.react-chatbot-kit-chat-input-form {
+    // 입력인풋창과 메세지전송아이콘 전체박스
+}
+
+.react-chatbot-kit-chat-input::placeholder {
+    // 입력 인풋창
+}
+
+.react-chatbot-kit-chat-btn-send {
+    // border: 3px solid green !important;
+    background-color: var(--jinairgreen) !important;
+    // 전송버튼아이콘
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+    // 전송버튼아이콘
+    color: var(--color-nav-main) !important;
+    font-size: 12px;
+    width: 50px;
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+    // border: 3px solid blueviolet !important;  
+    // 챗봇이 보낸 메세지랑 챗봇이름이랑 포함된 한줄한줄
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+    background-color: var(--color-nav-main) !important;
+    // 챗봇의 이름B
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+    border: 3px solid red !important;
+}
+
+.react-chatbot-kit-chat-bot-avatar-letter {
+    color: white !important;
+    // 챗봇의 이름B
+}
+
+.react-chatbot-kit-chat-bot-message {
+    margin: 0 !important;
+    white-space: pre-line !important;
+    // 챗봇이 보낸 메세지 한줄한줄
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {}
+
+.chatbot-loader-container {}
+
+#chatbot-loader #chatbot-loader-dot1 {}
+
+#chatbot-loader #chatbot-loader-dot2 {}
+
+#chatbot-loader #chatbot-loader-dot3 {}
+
+.react-chatbot-kit-error {}
+
+.react-chatbot-kit-error-container {}
+
+.react-chatbot-kit-error-header {}
+
+.react-chatbot-kit-error-docs {}
+
+
+//***********************************
+// mypage qnaUpload
+// *******************************
+.r-common {
+
+
+
+    @font-face {
+        font-family: "Pretendard-Regular";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+        font-weight: 400 500 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Pretendard-SemiBold";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Pretendard-Bold";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+
+    @font-face {
+        font-family: "Pretendard";
+        font-weight: 300;
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format('woff');
+    }
+
+    @font-face {
+        font-family: "Pretendard";
+        font-weight: 200;
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff") format('woff');
+    }
+
+    @font-face {
+        font-family: "Pretendard";
+        font-weight: 100;
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1//Pretendard-Thin.woff") format('woff');
+    }
+}
+.mypage-qnaUpload-container {
+    background-color: rgba(250, 250, 250);
+    padding: 0 0 30px 0;
+    margin: 0;
+    color: var(--color-nav-main);
+    .mypage-qnaUpload-content {
+        margin: 0 auto;
+        width: 1200px;
+        .mypage-qnaUpload-bottom-box{
+            margin-top: 30px;
+            >div{
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 50px;
+                button{
+                    background-color: var(--color-nav-main);
+                    padding: 15px 60px;
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 17px;
+                }
+            }
+            ul{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                text-align: center;
+                justify-content: space-between;
+                li:first-child{
+                   padding: 37px 20px;
+                }
+                li:nth-child(2){
+                    padding: 24px 20px;
+                }
+                li{
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                    width: 360px;
+                    border: 1px solid white;
+                    background-color: white;
+                    border-radius: 8px;
+                    padding: 20px;
+                    >div:nth-child(2){
+                        margin-top: 5px;
+                        margin-left: 60px;
+                        display: flex;
+                        font-size: 13px;
+                        align-items: center;
+                        border: 2px solid var(--jinairgreen);
+                        width: 80px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        span{
+                            margin-right: 5px;
+                        }
+                    }
+                    >div:first-child{
+                        display: flex;
+                        align-items: center;
+                        >span{
+                            border: 1px solid var(--color-nav-main);
+                            display: inline-block;
+                            width: 50px;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 100%;
+                            background-color: var(--color-nav-main);
+                            margin-right: 10px;
+                            .mypage-qnaUpload-icon{
+                                margin-left: 12px;
+                                color: #d3e92e;
+                                text-align: center;
+                                font-size: 25px;
+                            }
+                        }
+                        >div{
+                            h4{
+                                text-align: left;
+                                font-size: 14px;
+                                margin-bottom: 4px;
+                            }
+                            h5{
+                                text-align: left;
+                                font-size: 12px;
+                                font-weight: 100;
+                            }                           
+                        }
+                    }
+                }
+                margin-bottom: 50px;
+            }
+        }
+        .mypage-qnaUpload-middle-box{
+            display: flex;
+            width: 100%;
+            padding: 30px 0;
+            >div:first-child{
+                width: 300px;
+                padding: 0 30px;
+                font-weight: 500;
+            }
+            >div:nth-child(2){
+                width: 830px;
+                line-height: 2;
+                >div:first-child{
+                    border: 1px solid var(--color-181);
+                    border-radius: 5px;
+                    padding: 8px 15px;
+                    height: 130px;
+                    overflow-y: scroll;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+                >div:nth-child(2){
+                    margin-bottom: 20px;
+
+                }
+                ul{
+                    font-size: 14px;
+                    li{
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+        .mypage-qnaUpload-all-box {
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                tr{
+                    td:first-child{
+                        width: 300px;
+                        border-right: 1px solid var(--color-181);
+                        font-weight: 600;
+                    }
+                    td{                        
+                        border-bottom: 1px solid var(--color-181);
+                        padding: 20px 20px ;
+                    }
+                }
+                tr:nth-child(5){
+                    div{
+                        border: 1px solid var(--color-181);
+                        background-color: var(--color-242);
+                        border-radius: 8px;
+                        height: 80px;
+                        text-align: center;
+                        padding: 35px 0;
+                        margin-bottom: 20px;
+                        span{
+                            display: block;
+                        }
+                        button{
+                            margin-top: 20px;
+                            background-color: var(--color-nav-main);
+                            color: white;
+                            padding: 13px 30px;
+                            border-radius: 5px;
+                        }
+                    }
+                    ul{
+                        li{
+                            font-size: 14px;
+                            padding: 2px 0;
+                            span{
+                                text-decoration: underline;
+                                font-weight: 900;
+                            }
+                        }
+                    }
+                }
+                tr:first-child{
+                    select{
+                        width: 400px;
+                        padding: 13px;
+                        border: 1px solid var(--color-181);
+                        color: gray;
+                        background-color: white;
+                        border-radius: 8px;
+                    }
+                    select:first-child{
+                        margin-right: 10px;
+                    }
+                }
+                tr:last-child{
+                    li:not(:last-child){
+                        padding-bottom: 10px;
+                    }
+                    li{
+                        display: flex;
+                        align-items: center;
+                        label{
+                            // border: 1px solid red;
+                            width: 130px;
+                            display: inline-block;
+                        }
+                        input{
+                            background-color: white;
+                            border: 1px solid var(--color-181);
+                            padding: 10px;
+                            width: 250px;
+                            border-radius: 5px;
+                        }
+                    }
+                    p{
+                        font-size: 14px;
+                        padding-top: 20px;
+                    }
+                }
+                tr:nth-child(3){
+                    input{
+                        background-color: white;
+                        border: 1px solid var(--color-181);
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: 800px;
+                    }
+                }
+                tr:nth-child(4){
+                    input{
+                        width: 800px;
+                        background-color: white;
+                        border: 1px solid var(--color-181);
+                        padding: 10px;
+                        border-radius: 8px;
+                        height: 250px;
+                    }
+                }
+                tr:nth-child(2){
+                    div{
+                        font-weight: 100;
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                        button{
+                            border: 1.5px solid var(--jinairgreen);
+                            padding: 4px 13px;
+                            border-radius: 5px;
+                            margin-right: 10px;
+                        }
+                    }
+                    li:not(:last-child){
+                        padding-bottom: 10px;
+                    }
+                    li{
+                        display: flex;
+                        align-items: center;
+                        label{
+                            // border: 1px solid red;
+                            width: 130px;
+                            display: inline-block;
+                        }
+                        select{
+                            padding: 10px;
+                            border-radius: 5px;
+                            width: 190px; 
+                            margin-right: 15px;
+                            border: 1px solid var(--color-181);
+                            background-color: white;
+                        }
+                        input{
+                            background-color: white;
+                            border: 1px solid var(--color-181);
+                            padding: 10px;
+                            width: 250px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .mypage-qnaUpload-text-box {
+            display: flex;
+            justify-content: space-between;
+            span{
+                font-size: 24px;
+                position: relative;
+                z-index: 100;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            span::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 8%;
+                margin-top: 0;
+                width: 100%;
+                height: 7px;
+                border-radius: 2px;
+                z-index: -1;
+                background: linear-gradient(to right, rgba(189, 214, 0, 0.7) 0%, rgba(211, 233, 46, 0) 100%);
+                .mypage-qnaUpload-text {
+                    color: red;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+//***********************************
+// admin qna
+// *******************************
+.admin-qna-comment-all-box{
+    // border: 1px solid red;
+    >div:last-child{
+        form{
+            input:last-child{
+            background-color: var(--color-nav-main);
+            color: white;
+            padding: 7px 13px;
+        }
+    }
+    }
+    >div:first-child{
+        margin-bottom: 30px;
+        height: auto;
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            td{
+                border: 1px solid gainsboro;
+                padding: 10px 0;
+                padding-left: 5px;
+            }
+            td:first-child{
+                width: 100px;
+            }
+        }
+    }
+    >div:nth-child(2){
+        height: auto;
+        border: 1px solid var(--color-nav-main);
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            td{
+                border: 1px solid gainsboro;
+                // padding: 10px 0;
+                padding-left: 5px;
+            }
+            td:first-child{
+                width: 100px;
+            }
+            input{
+                border: none;
+                width: 1000px;
+                padding: 10px;
+            }
+            tr:nth-child(2){
+                input{
+                    height: 130px;
+                }
+            }
+        }
+        >div{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            button{
+                padding: 10px 15px;
+                background-color: var(--color-nav-main);
+                color:white;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.admin-qna-comment-active {
+    background-color: #e6f4ff; // 기본 배경색
+    color: #007acc; // 기본 텍스트 색상
+  
+    &:hover {
+      background-color: #d0eaff; // hover 시 배경색
+      color: #007acc; // hover 시에도 같은 텍스트 색 유지
+    }
+  }
+.admin-qna-pagenation{
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .page-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .page-link {
+    padding: 8px 12px;
+    border-radius: 4px;
+    // border: 1px solid #ddd;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .page-link:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .active .page-link {
+    // background-color: #007bff;
+    color: black;
+    // border-color: #007bff;
+  }
+  
+  .prev, .next {
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+
+  .exchange{
+    position: fixed;
+    right: 30px;
+    bottom: 175px;
+    button {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: var(--color-nav-main);
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .exchange-icon {
+        font-size: 25px;
+        color: var(--jinairgreen);
+        margin: 0;
+        padding: 0;
+
+    }
+    
+    span {
+        display: block;
+        color: var(--jinairgreen);
+        font-size: 14px;
+        margin: -5px;
+        padding: 0;
+    }
+  }
+
+.exchange-box{
+    position: fixed;
+    padding: 7px;
+    right: 0px;
+    bottom: 180px;
+    width: 190px;
+    border: 1px solid var(--color-nav-main);  
+    border-radius: 5px;
+    z-index: 10000000000;
+    background-color: #d0eaff;
+    h2{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+}
+.header_exchange{
+    >div{
+        border-top: 1px solid var(--color-nav-main);
+        padding: 3px;
+        ul{
+            display: flex;
+            margin-bottom: 5px;
+            li{
+                display: flex;
+                list-style-type: none;
+                input{
+                    width: 60px;
+                }
+            }
+        }
+    }
+    
+}

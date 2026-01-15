@@ -1,0 +1,416 @@
+{
+    "banner_img":[
+        {
+            "num":"1",
+            "path":"/",
+            "img":"/images/mainbanner/banner1.png"
+        },
+        {
+            "num":"2",
+            "path":"/",
+            "img":"/images/mainbanner/banner2.png"
+        },
+        {
+            "num":"3",
+            "path":"/",
+            "img":"/images/mainbanner/banner3.png"
+        },
+        {
+            "num":"4",
+            "path":"/",
+            "img":"/images/mainbanner/banner4.png"
+        },
+        {
+            "num":"5",
+            "path":"/",
+            "img":"/images/mainbanner/banner5.png"
+        },
+        {
+            "num":"6",
+            "path":"/",
+            "img":"/images/mainbanner/banner6.png"
+        },
+        {
+            "num":"7",
+            "path":"/",
+            "img":"/images/mainbanner/banner7.png"
+        },
+        {
+            "num":"8",
+            "path":"/",
+            "img":"/images/mainbanner/banner8.png"
+        }
+    ],
+    "promotion":[
+        {
+            "num":"1",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=dd824538f4444ebe9c0f2b4ef8c169311",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"2",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=ec048892a01a48febb074ce62348292a1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"3",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=2ceb96722a5947999d2c73bf75dac61f2",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"4",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=ad89e897a5db4f1caf15c0413ff8aed71",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"5",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=2452a91ff9f1459081f1b7b8d601f18d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"6",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=0f2756d38218462292c75e86f0c67b4d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"7",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=f7144c4e97b3425e8579747b12f286c11",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"8",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=410e7356b7c24126b464bba83eb1a5491",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"9",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=0f2756d38218462292c75e86f0c67b4d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"10",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=f7144c4e97b3425e8579747b12f286c11",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"11",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=cab2188bab4a4f1e8b577a4c9338c63b1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"12",
+            "path":"/",
+            "img":"/images/mainbanner/banner4.png",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        }
+    ],
+    "lowest":[
+        {
+            "num":"1",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=dd824538f4444ebe9c0f2b4ef8c169311",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"2",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=ec048892a01a48febb074ce62348292a1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"3",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=2ceb96722a5947999d2c73bf75dac61f2",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"4",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=ad89e897a5db4f1caf15c0413ff8aed71",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"5",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=2452a91ff9f1459081f1b7b8d601f18d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"6",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=0f2756d38218462292c75e86f0c67b4d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"7",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=f7144c4e97b3425e8579747b12f286c11",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"8",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=410e7356b7c24126b464bba83eb1a5491",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"9",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=0f2756d38218462292c75e86f0c67b4d1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"10",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=f7144c4e97b3425e8579747b12f286c11",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"11",
+            "path":"/",
+            "img":"https://www.jinair.com/file/download?flKey=cab2188bab4a4f1e8b577a4c9338c63b1",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        },
+        {
+            "num":"12",
+            "path":"/",
+            "img":"/images/mainbanner/banner4.png",
+            "acont":"서울/인천(ICN)",
+            "dcont":"홍콩(HKG)",
+            "price":"KRW 85,700",
+            "date":"2025.03.29 (토)"
+        }
+    ],
+    "lowestChart": [
+        {
+            "saledate": "04/02",
+            "price": "KRW 158,063",
+            "cost": "63.23%"
+        },
+        {
+            "saledate": "04/03",
+            "price": "KRW 226,423",
+            "cost": "90.57%"
+        },
+        {
+            "saledate": "04/04",
+            "price": "KRW 59,390",
+            "cost": "23.76%"
+        },
+        {
+            "saledate": "04/05",
+            "price": "KRW 223,880",
+            "cost": "89.55%"
+        },
+        {
+            "saledate": "04/06",
+            "price": "KRW 195,902",
+            "cost": "78.36%"
+        },
+        {
+            "saledate": "04/07",
+            "price": "KRW 174,007",
+            "cost": "69.6%"
+        },
+        {
+            "saledate": "04/08",
+            "price": "KRW 125,602",
+            "cost": "50.24%"
+        },
+        {
+            "saledate": "04/09",
+            "price": "KRW 183,449",
+            "cost": "73.38%"
+        },
+        {
+            "saledate": "04/10",
+            "price": "KRW 168,682",
+            "cost": "67.47%"
+        },
+        {
+            "saledate": "04/11",
+            "price": "KRW 182,643",
+            "cost": "73.06%"
+        },
+        {
+            "saledate": "04/12",
+            "price": "KRW 223,009",
+            "cost": "89.2%"
+        },
+        {
+            "saledate": "04/13",
+            "price": "KRW 85,611",
+            "cost": "34.24%"
+        },
+        {
+            "saledate": "04/14",
+            "price": "KRW 59,790",
+            "cost": "23.92%"
+        },
+        {
+            "saledate": "04/15",
+            "price": "KRW 214,060",
+            "cost": "85.62%"
+        },
+        {
+            "saledate": "04/16",
+            "price": "KRW 199,358",
+            "cost": "79.74%"
+        },
+        {
+            "saledate": "04/17",
+            "price": "KRW 58,004",
+            "cost": "23.2%"
+        },
+        {
+            "saledate": "04/18",
+            "price": "KRW 226,150",
+            "cost": "90.46%"
+        },
+        {
+            "saledate": "04/19",
+            "price": "KRW 137,170",
+            "cost": "54.87%"
+        },
+        {
+            "saledate": "04/20",
+            "price": "KRW 155,427",
+            "cost": "62.17%"
+        },
+        {
+            "saledate": "04/21",
+            "price": "KRW 211,506",
+            "cost": "84.6%"
+        },
+        {
+            "saledate": "04/22",
+            "price": "KRW 81,235",
+            "cost": "32.49%"
+        },
+        {
+            "saledate": "04/23",
+            "price": "KRW 138,520",
+            "cost": "55.41%"
+        },
+        {
+            "saledate": "04/24",
+            "price": "KRW 113,669",
+            "cost": "45.47%"
+        },
+        {
+            "saledate": "04/25",
+            "price": "KRW 84,415",
+            "cost": "33.77%"
+        },
+        {
+            "saledate": "04/26",
+            "price": "KRW 183,233",
+            "cost": "73.29%"
+        },
+        {
+            "saledate": "04/27",
+            "price": "KRW 218,746",
+            "cost": "87.5%"
+        },
+        {
+            "saledate": "04/28",
+            "price": "KRW 247,344",
+            "cost": "98.94%"
+        },
+        {
+            "saledate": "04/29",
+            "price": "KRW 222,212",
+            "cost": "88.88%"
+        },
+        {
+            "saledate": "04/30",
+            "price": "KRW 103,542",
+            "cost": "41.42%"
+        },
+        {
+            "saledate": "05/01",
+            "price": "KRW 99,678",
+            "cost": "39.87%"
+        }
+    ]
+}
