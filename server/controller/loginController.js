@@ -103,8 +103,8 @@ export const setSignup = async (req, res) => {
 export const getNaverToken = async (req, res) => {
   const { code, state } = req.body;
 
-  const client_id = process.env.CLIENT_ID;
-  const client_secret = process.env.CLIENT_SECRET;
+  const client_id = process.env.REACT_APP_CLIENT_ID;
+  const client_secret = process.env.REACT_APP_CLIENT_SECRET;
   const redirect_uri = "http://localhost:3000/naver-redirect";
 
   try {
@@ -164,7 +164,7 @@ export const getNaverToken = async (req, res) => {
 export const getKakaoToken = async (req, res) => {
   const { code } = req.body;
 
-  const REST_API_KEY = process.env.REST_API_KEY;
+  const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
   const REDIRECT_URI = "http://localhost:3000/kakao-redirect";
 
   try {

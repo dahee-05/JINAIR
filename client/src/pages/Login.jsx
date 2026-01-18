@@ -135,14 +135,14 @@ export default function Login() {
 
   const openNaverPopup = () => {
     const state = Math.random().toString(36).substring(2, 15);
-    const naver_client_id = process.env.GMAIL_USER;
+    const naver_client_id = process.env.REACT_APP_GMAIL_USER;
     const callbackUrl = "http://localhost:3000/naver-redirect";
     const NAVER_AUTH_URL = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${naver_client_id}&redirect_uri=${encodeURIComponent(callbackUrl)}&state=${state}`;
 
     window.open(NAVER_AUTH_URL, "naverLogin", "width=500,height=600");
   };
   const openKakaoPopup = () => {
-    const REST_API_KEY = process.env.KEY;
+    const REST_API_KEY = process.env.REACT_APP_KEY;
     const REDIRECT_URI = "http://localhost:3000/kakao-redirect";
 
     const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
