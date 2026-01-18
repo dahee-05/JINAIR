@@ -23,7 +23,6 @@ export const getAuthCode = async (req, res) => {
   const { name, email } = req.body;
 
   const authCode = Math.floor(Math.random() * 1000000).toString();
-  console.log("authCode ->>", authCode);
 
   const subject = "[JinAir] 이메일 인증번호가 도착하였습니다.";
   const message = `발급된 인증번호는 [ ${authCode} ]입니다.`;
@@ -82,6 +81,7 @@ export const getFindPwd = async (req, res) => {
  * 아이디 중복체크
  *****************************/
 export const getIdCheck = async (req, res) => {
+  console.log("아이디체크 컨트롤러 ->>", req.body);
   const result = await repository.getIdCheck(req.body);
   res.json(result);
 };

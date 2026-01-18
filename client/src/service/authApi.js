@@ -14,7 +14,7 @@ import { axiosPost } from "./api.js";
  * 로그인
  *****************************/
 export const getLogin = (formData) => async (dispatch) => {
-  const url = `http://localhost:9000/member/login`;
+  const url = `http://localhost:9000//member/login`;
   const data = formData;
 
   const loginResult = await axiosPost({ url, data });

@@ -50,6 +50,10 @@ export default function AuthUser({ item, onNext }) {
   const [sendCodeActive, setSendCodeActive] = useState(false);
   const [codeActive, setCodeActive] = useState(false);
   const [authCode, setAuthCode] = useState("");
+  const emailRegEx =
+    /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
+  const phoneRegEX = /^010-?\d{4}-?\d{4}$/;
+  const birthRegEX = /^(19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$/;
 
   const refs = {
     idRef: useRef(null),
@@ -107,10 +111,20 @@ export default function AuthUser({ item, onNext }) {
   /* input 입력값 변동 함수 */
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
     setMsgResult("");
+
     if (name === "id") {
       setIdCheckState(false);
+    }
+    if (name === "email") {
+      if (value && !emailRegEx.test(value)) {
+        setMsgCheck("email");
+        setMsgResult("이메일 형식이 올바르지 않습니다.");
+      } else {
+        setMsgCheck("");
+        setMsgResult("");
+      }
     }
     for (let data in formData) {
       if (formData[data] !== "") {
@@ -125,14 +139,22 @@ export default function AuthUser({ item, onNext }) {
   const handleReqAuthCode = async () => {
     try {
       if (refs.emailRef.current.value !== "") {
-        const res = await axios.post("http://localhost:9000/member/authcode", {
-          name: refs.nameRef.current.value,
-          email: refs.emailRef.current.value,
-        });
-        if (res.data.success) {
-          alert("인증번호가 발송되었습니다.");
-          setSendCodeActive(true);
-          setAuthCode(res.data.code);
+        if (emailRegEx.test(refs.emailRef.current.value)) {
+          const res = await axios.post(
+            "http://localhost:9000/member/authcode",
+            {
+              name: refs.nameRef.current.value,
+              email: refs.emailRef.current.value,
+            },
+          );
+          if (res.data.success) {
+            alert("인증번호가 발송되었습니다.");
+            setSendCodeActive(true);
+            setAuthCode(res.data.code);
+          }
+        } else {
+          alert("이메일 형식에 맞춰서 입력해주세요");
+          refs.emailRef.current.focus();
         }
       } else {
         alert("이메일을 입력해주세요");
@@ -159,26 +181,51 @@ export default function AuthUser({ item, onNext }) {
 
   /* 아이디 중복확인 */
   const handleIdCheck = () => {
-    axios
-      .post("http://localhost:9000/member/idcheck", { id: formData.id })
-      .then((res) => {
-        if (res.data[0].cnt) {
-          alert("이미 사용중인 아이디입니다.");
-          setIdCheckState(false);
-          refs.idRef.current.value = "";
-          refs.idRef.current.focus();
-        } else {
-          alert("사용가능한 아이디입니다.");
-          setIdCheckState(true);
-        }
-      })
-      .catch((error) => console.log(error));
+    if (refs.idRef.current.value !== "") {
+      axios
+        .post("http://localhost:9000/member/idcheck", { id: formData.id })
+        .then((res) => {
+          if (res.data[0].cnt) {
+            alert("이미 사용중인 아이디입니다.");
+            setIdCheckState(false);
+            refs.idRef.current.value = "";
+            refs.idRef.current.focus();
+          } else {
+            alert("사용가능한 아이디입니다.");
+            setIdCheckState(true);
+          }
+        })
+        .catch((error) => console.log(error));
+    } else {
+      alert("아이디를 입력해주세요.");
+      refs.idRef.current.focus();
+    }
   };
 
   /* submit 함수 */
   const handleSubmit = async (e) => {
     e.preventDefault();
     let result, msg, key;
+
+    if (formData.birth && !birthRegEX.test(formData.birth)) {
+      setMsgCheck("birth");
+      setMsgResult("생년월일 형식이 올바르지 않습니다.");
+      refs.birthRef.current?.focus();
+      return;
+    }
+    if (formData.email && !emailRegEx.test(formData.email)) {
+      setMsgCheck("email");
+      setMsgResult("이메일 형식이 올바르지 않습니다.");
+      refs.emailRef.current?.focus();
+      return;
+    }
+    if (formData.phone && !phoneRegEX.test(formData.phone)) {
+      setMsgCheck("phone");
+      setMsgResult("핸드폰 형식이 올바르지 않습니다.");
+      refs.phoneRef.current?.focus();
+      return;
+    }
+
     if (item === "userInfo") {
       ({ result, msg, key } = validateUserSignup(
         refs,
@@ -282,7 +329,7 @@ export default function AuthUser({ item, onNext }) {
                 value={formData.id}
                 ref={refs.idRef}
                 onChange={handleChange}
-                placeholder="아이디(이메일계정)"
+                placeholder="아이디"
               />
               {item === "userInfo" && (
                 <button
@@ -404,7 +451,7 @@ export default function AuthUser({ item, onNext }) {
                 value={formData.email}
                 ref={refs.emailRef}
                 onChange={handleChange}
-                placeholder="이메일"
+                placeholder="이메일 (example@domain.com)"
               />
             </div>
             <div
@@ -487,7 +534,7 @@ export default function AuthUser({ item, onNext }) {
                 value={formData.email}
                 ref={refs.emailRef}
                 onChange={handleChange}
-                placeholder="이메일"
+                placeholder="이메일 (example@domain.com)"
               />
               <button
                 type="button"

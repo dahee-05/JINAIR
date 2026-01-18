@@ -1,29 +1,27 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-export const sendMail  = async(name, email, subject, message) =>{
+export const sendMail = async (name, email, subject, message) => {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth:{
-      user:process.env.GMAIL_USER,
-      pass:process.env.GMAIL_PASS,
-    }
+    service: "gmail",
+    auth: {
+      user: process.env.REACT_APP_GMAIL_USER,
+      pass: process.env.REACT_APP_GMAIL_PASS,
+    },
   });
-
   const mailOption = {
     from: name,
-    to: process.env.GMAIL_USER,
+    to: process.env.REACT_APP_GMAIL_USER,
     subject,
-    html:`
+    html: `
       <p><strong>이메일:</strong> ${email}</p>
-      <p><strong>메시지:</strong>${name}님 ${message}</p>`
+      <p><strong>메시지:</strong>${name}님 ${message}</p>`,
   };
 
   try {
     await transporter.sendMail(mailOption);
-    return 'success'
+    return "success";
   } catch (error) {
-    console.log('메일 전송 실패', error);
+    console.log("메일 전송 실패", error);
     return error;
   }
-
 };
