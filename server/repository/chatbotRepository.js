@@ -1,8 +1,8 @@
-import { db } from './db.js';
+import { db } from "./db.js";
 
-/***************************** 
+/*****************************
  * 나라데이터 가져오기
-*****************************/
+ *****************************/
 export const getCountry = async () => {
   const sql = `
         select city
@@ -13,9 +13,9 @@ export const getCountry = async () => {
 
   return result;
 };
-/***************************** 
+/*****************************
  * 비행 스케쥴 있는 지 체크
-*****************************/
+ *****************************/
 export const searchSchedule = async ({ start, end, date, endDate }) => {
   if (endDate) {
     const sql = `
@@ -30,7 +30,7 @@ export const searchSchedule = async ({ start, end, date, endDate }) => {
   `;
     const [result] = await db.execute(sql, [start, end, date, endDate]);
     // console.log('✅ 쿼리 결과:', result[0].result_rows);
-    return { "result": result[0].result_rows };
+    return { result: result[0].result_rows };
   } else {
     const sql = `
       select count(*) as result_rows 
@@ -43,14 +43,20 @@ export const searchSchedule = async ({ start, end, date, endDate }) => {
     `;
     const [result] = await db.execute(sql, [start, end, date]);
     // console.log('✅ 쿼리 결과:', result[0].result_rows);
-    return { "result": result[0].result_rows };
+    return { result: result[0].result_rows };
   }
 };
 
-/***************************** 
- * 비행스케쥴 가져오기 
-*****************************/
-export const getSchedule = async ({ start, end, date, airNumber, airNumStartDate }) => {
+/*****************************
+ * 비행스케쥴 가져오기
+ *****************************/
+export const getSchedule = async ({
+  start,
+  end,
+  date,
+  airNumber,
+  airNumStartDate,
+}) => {
   if (airNumber && airNumStartDate) {
     const sql = `
     select       
@@ -67,8 +73,7 @@ export const getSchedule = async ({ start, end, date, airNumber, airNumStartDate
       `;
     const [result] = await db.execute(sql, [airNumber, airNumStartDate]);
     // console.log('sdfsd',result[0]);
-    return { 'result': result[0] };
-
+    return { result: result[0] };
   } else if (start && end && date) {
     const sql = `
           select    
@@ -86,13 +91,13 @@ export const getSchedule = async ({ start, end, date, airNumber, airNumStartDate
             `;
     const [result] = await db.execute(sql, [start, end, date]);
     // console.log('sdfsd',result[0]);
-    return { 'result': result[0] };
+    return { result: result[0] };
   }
 };
 
-/***************************** 
+/*****************************
  * 비행 스케쥴 있는 지 체크 airplane
-*****************************/
+ *****************************/
 export const searchAirplane = async ({ airNumber, airNumStartDate }) => {
   const sql = `
     select count(*) as result_rows 
@@ -104,14 +109,14 @@ export const searchAirplane = async ({ airNumber, airNumStartDate }) => {
   `;
   const [result] = await db.execute(sql, [airNumber, airNumStartDate]);
   // console.log('✅ 쿼리 결과:', result[0].result_rows);
-  return { "result": result[0].result_rows };
+  return { result: result[0].result_rows };
 };
 
-/***************************** 
+/*****************************
  * // 당월 최저가 가져오기 출발지 도착지 가격
-*****************************/
+ *****************************/
 export const searchMonthCheap = async ({ start, end, date }) => {
-  const month = date.split('-')[1];
+  const month = date.split("-")[1];
   const sql = `    
   select 
       concat(substring(Departure_date,6,2),'월',concat(substring(Departure_date,9,2),'일')) as date,
@@ -126,12 +131,12 @@ concat(substring(Departure_date,6,2),'월') as month
     LIMIT 1       
     `;
   const [result] = await db.execute(sql, [start, end, month]);
-  return { 'result': result[0] };
-}
+  return { result: result[0] };
+};
 
-/***************************** 
+/*****************************
  * // 예약번호 아이디로 예약조회
-*****************************/
+ *****************************/
 export const searchReservation = async ({ reserMessage1, reserMessage }) => {
   const sql = `    
   select count(*) as result_rows
@@ -141,13 +146,12 @@ export const searchReservation = async ({ reserMessage1, reserMessage }) => {
      
     `;
   const [result] = await db.execute(sql, [reserMessage, reserMessage1]);
-  return { "result": result[0].result_rows };
-}
+  return { result: result[0].result_rows };
+};
 
-
-/***************************** 
+/*****************************
  *예약정보 가져오기
-*****************************/
+ *****************************/
 export const getReservation = async ({ reserMessage, reserMessage1 }) => {
   const sql = `    
   select  c.ename_first as eFirst, c.ename_last as eLast, RES_NUM as rnum, 
@@ -158,13 +162,11 @@ export const getReservation = async ({ reserMessage, reserMessage1 }) => {
     r.ID = ?      
     `;
   const [result] = await db.execute(sql, [reserMessage, reserMessage1]);
-  return { 'result': result[0] };
-}
-
+  return { result: result[0] };
+};
 
 // qna 이미지 등록
 export const registerQna = async (formData) => {
-
   const sql = `
              insert into qna(
                 TYPE, TITLE,CONTENT,REG_DATE,qnaImg,category,customer_id
@@ -180,12 +182,12 @@ export const registerQna = async (formData) => {
   ];
 
   const [result] = await db.execute(sql, values);
-  return { "result_rows": result.affectedRows };
-}
+  return { result_rows: result.affectedRows };
+};
 
-/***************************** 
+/*****************************
  *qna 가져오기
-*****************************/
+ *****************************/
 export const getQnaAll = async () => {
   const sql = `    
   select NO as no, TYPE as type, category, customer_id as id,comment,adminTitle,adminContent,
@@ -193,8 +195,8 @@ export const getQnaAll = async () => {
    from qna    
     `;
   const [result] = await db.execute(sql);
-  return { 'result': result };
-}
+  return { result: result };
+};
 
 export const getQna = async (qid) => {
   const sql = `
@@ -210,7 +212,7 @@ export const getQna = async (qid) => {
   q.CONTENT AS content,
   LEFT(q.REG_DATE, 10) AS reg_date,
   (
-    SELECT CONCAT('http://localhost:9000', jt.img)
+    SELECT CONCAT('http://localhost:9000/', jt.img)
     FROM JSON_TABLE(
       JSON_UNQUOTE(q.qnaImg->>'$[0]'),
       '$[*]' COLUMNS (
@@ -226,16 +228,16 @@ WHERE q.NO = ?
 
   const [result] = await db.execute(sql, [qid]);
   // console.log('wq',result[0]);
-  
+
   return result[0];
-}
+};
 
 // qna 답변여부 업데이트
 
 export const updateComment = async ({ no, inputData }) => {
   // console.log(no);
   // console.log(inputData);
-  
+
   const sql = `
              UPDATE qna
             SET comment = '답변완료',
@@ -243,14 +245,18 @@ export const updateComment = async ({ no, inputData }) => {
                 adminContent = ?
             WHERE no = ?;
               `;
-  const [result] = await db.execute(sql, [inputData.title, inputData.content, no]);
-  return { 'result_rows': result.affectedRows };
-}
+  const [result] = await db.execute(sql, [
+    inputData.title,
+    inputData.content,
+    no,
+  ]);
+  return { result_rows: result.affectedRows };
+};
 
-/***************************** 
+/*****************************
  * 체크인 정보있는지 조회
-*****************************/
-export const checkCheckIn = async ({rnum,id}) => {
+ *****************************/
+export const checkCheckIn = async ({ rnum, id }) => {
   const sql = `
     select count(*) as result_rows 
     from reservation
@@ -259,18 +265,18 @@ export const checkCheckIn = async ({rnum,id}) => {
           ID = ?
          
   `;
-  const [result] = await db.execute(sql, [rnum,id]);
-  return { "result": result[0].result_rows };
+  const [result] = await db.execute(sql, [rnum, id]);
+  return { result: result[0].result_rows };
 };
-/***************************** 
+/*****************************
  * 고객정보 조회
-*****************************/
-export const getCustomerInfo = async ({id}) => {
+ *****************************/
+export const getCustomerInfo = async ({ id }) => {
   const sql = `
     select kname_first,kname_last, email
       from customer
       where id = ?
   `;
   const [result] = await db.execute(sql, [id]);
-  return { "result": result[0]};
+  return { result: result[0] };
 };

@@ -1,7 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { FaArrowRightArrowLeft, FaEquals, FaAngleUp, FaAngleDown, FaRegSquareCheck, FaSquareCheck, FaArrowRightLong, FaPlus } from "react-icons/fa6";
+import {
+  FaArrowRightArrowLeft,
+  FaEquals,
+  FaAngleUp,
+  FaAngleDown,
+  FaRegSquareCheck,
+  FaSquareCheck,
+  FaArrowRightLong,
+  FaPlus,
+} from "react-icons/fa6";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { setTotalPaymentPrice } from "../../features/booking/paymentSlice.js";
 import { BiSolidPlaneTakeOff } from "react-icons/bi";
@@ -13,13 +22,15 @@ export default function BookingPayment() {
   const nav = useNavigate();
   const dispatch = useDispatch();
 
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
-  const { resevationType } = useSelector(state => state.booking);
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const { resevationType } = useSelector((state) => state.booking);
   const backFlightNum = useSelector((state) => state.booking.backFlightNum);
   const goFlightNum = useSelector((state) => state.booking.goFlightNum);
-  const ticketPrice = useSelector(state => state.booking.ticketPrice); // 편도 
-  const { goTicketPrice, backTicketPrice,
-    // goSeatType, 
+  const ticketPrice = useSelector((state) => state.booking.ticketPrice); // 편도
+  const {
+    goTicketPrice,
+    backTicketPrice,
+    // goSeatType,
     // backSeatType 좌석번호 생기면 변경 예정
   } = useSelector((state) => state.booking);
 
@@ -31,24 +42,34 @@ export default function BookingPayment() {
   //토탈 프라이스 관련
   // total_payment_price 계산
   useEffect(() => {
-    const total_payment_price = resevationType === "oneWay"
-      ? ticketPrice * passengers.length // 편도 예약 시 ticketPrice 사용
-      : (goTicketPrice * passengers.length) + (backTicketPrice * passengers.length); // 왕복 예약 시 기존 방식 사용
+    const total_payment_price =
+      resevationType === "oneWay"
+        ? ticketPrice * passengers.length // 편도 예약 시 ticketPrice 사용
+        : goTicketPrice * passengers.length +
+          backTicketPrice * passengers.length; // 왕복 예약 시 기존 방식 사용
 
     console.log(passengers);
 
     // 계산된 금액을 Redux에 저장
     dispatch(setTotalPaymentPrice(total_payment_price));
-  }, [goTicketPrice, backTicketPrice, passengers.length, ticketPrice, resevationType, dispatch]);
-
+  }, [
+    goTicketPrice,
+    backTicketPrice,
+    passengers.length,
+    ticketPrice,
+    resevationType,
+    dispatch,
+  ]);
 
   // 리덕스에서 값 가져오기
-  const totalPaymentPrice = useSelector((state) => state.payment.total_payment_price);
+  const totalPaymentPrice = useSelector(
+    (state) => state.payment.total_payment_price,
+  );
   // 날짜 계산 수식
   const formatDate = (date) => {
     const d = new Date(date);
-    return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')} 
-    ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`;
+    return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, "0")}-${d.getDate().toString().padStart(2, "0")} 
+    ${d.getHours().toString().padStart(2, "0")}:${d.getMinutes().toString().padStart(2, "0")}`;
   };
 
   const [openStates, setOpenStates] = useState({
@@ -62,25 +83,31 @@ export default function BookingPayment() {
     hasCheckedLogin.current = true;
 
     if (!isLoggedIn) {
-      const select = window.confirm("로그인 서비스가 필요합니다. \n로그인 하시겠습니까?");
-      select ? nav('/login') : nav('/');
-
+      const select = window.confirm(
+        "로그인 서비스가 필요합니다. \n로그인 하시겠습니까?",
+      );
+      select ? nav("/login") : nav("/");
     }
   }, [isLoggedIn]);
 
-  //좌석 관련 체크 
+  //좌석 관련 체크
   useEffect(() => {
     const fetchFlights = async () => {
       try {
-        const nums = resevationType === "roundTrip"
-          ? [goFlightNum, backFlightNum]
-          : [flightNum];
+        const nums =
+          resevationType === "roundTrip"
+            ? [goFlightNum, backFlightNum]
+            : [flightNum];
 
         const responses = await Promise.all(
-          nums.map(num => axios.post('http://localhost:9000payment/flight', { flightNum: num }))
+          nums.map((num) =>
+            axios.post("http://localhost:9000/payment/flight", {
+              flightNum: num,
+            }),
+          ),
         );
 
-        const flights = responses.map(res => res.data.flight[0]);
+        const flights = responses.map((res) => res.data.flight[0]);
         setSelectedFlights(flights);
       } catch (error) {
         console.error("항공편 조회 실패:", error);
@@ -88,16 +115,12 @@ export default function BookingPayment() {
     };
 
     const shouldFetch =
-      resevationType === "roundTrip"
-        ? goFlightNum && backFlightNum
-        : flightNum;
+      resevationType === "roundTrip" ? goFlightNum && backFlightNum : flightNum;
 
     if (shouldFetch) {
       fetchFlights();
     }
   }, [goFlightNum, backFlightNum, flightNum, resevationType]);
-
-
 
   const toggleList = (segmentKey) => {
     setOpenStates((prev) => ({
@@ -108,7 +131,7 @@ export default function BookingPayment() {
 
   // 성인/소아 여부 확인 함수
   const calculateAge = (birth) => {
-    const birthDate = new Date(birth.replace(/\./g, '-'));
+    const birthDate = new Date(birth.replace(/\./g, "-"));
     const today = new Date();
 
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -142,51 +165,85 @@ export default function BookingPayment() {
         <section className="booking-payment-section">
           {resevationType === "oneWay" ? (
             <article className="payment-agreement-top">
-              <h3><p>여행정보</p></h3>
+              <h3>
+                <p>여행정보</p>
+              </h3>
               <div className="noneExtras-warp">
                 <div className="noneExtras-icon">
-                  <p><FaArrowRightLong /></p>
+                  <p>
+                    <FaArrowRightLong />
+                  </p>
                   <p>편도</p>
                 </div>
                 <div className="noneExtras-way-warp">
                   <div className="noneExtras-way1">
                     <div className="noneExtras-way-title">구간1</div>
-                    <div>{selectedFlights[0]?.Departure_location} {selectedFlights[0]?.D_acode}</div>
+                    <div>
+                      {selectedFlights[0]?.Departure_location}{" "}
+                      {selectedFlights[0]?.D_acode}
+                    </div>
                     <BiSolidPlaneTakeOff />
-                    <div>{selectedFlights[0]?.Arrive_location} {selectedFlights[0]?.A_acode}</div>
-                    <div>{formatDate(selectedFlights[0]?.Arrive_date)} ~ {formatDate(selectedFlights[0]?.Departure_date)}</div>
+                    <div>
+                      {selectedFlights[0]?.Arrive_location}{" "}
+                      {selectedFlights[0]?.A_acode}
+                    </div>
+                    <div>
+                      {formatDate(selectedFlights[0]?.Arrive_date)} ~{" "}
+                      {formatDate(selectedFlights[0]?.Departure_date)}
+                    </div>
                   </div>
                 </div>
               </div>
             </article>
           ) : (
             <article className="payment-agreement-top">
-              <h3><p>여행정보</p></h3>
+              <h3>
+                <p>여행정보</p>
+              </h3>
               <div className="noneExtras-warp">
                 <div className="noneExtras-icon">
-                  <p><FaArrowRightArrowLeft /></p>
+                  <p>
+                    <FaArrowRightArrowLeft />
+                  </p>
                   <p>왕복</p>
                 </div>
                 {/* 구간1 - 가는편 */}
                 <div className="noneExtras-way-warp">
                   <div className="noneExtras-way1">
                     <div className="noneExtras-way-title">구간1</div>
-                    <div>{selectedFlights[0]?.Departure_location} {selectedFlights[0]?.D_acode}</div>
+                    <div>
+                      {selectedFlights[0]?.Departure_location}{" "}
+                      {selectedFlights[0]?.D_acode}
+                    </div>
                     <BiSolidPlaneTakeOff />
-                    <div>{selectedFlights[0]?.Arrive_location} {selectedFlights[0]?.A_acode}</div>
-                    <div>{formatDate(selectedFlights[0]?.Arrive_date)} ~ {formatDate(selectedFlights[0]?.Departure_date)}</div>
+                    <div>
+                      {selectedFlights[0]?.Arrive_location}{" "}
+                      {selectedFlights[0]?.A_acode}
+                    </div>
+                    <div>
+                      {formatDate(selectedFlights[0]?.Arrive_date)} ~{" "}
+                      {formatDate(selectedFlights[0]?.Departure_date)}
+                    </div>
                   </div>
                   <div className="noneExtras-way2">
                     <div className="noneExtras-way-title">구간2</div>
-                    <div>{selectedFlights[1]?.Departure_location} {selectedFlights[1]?.D_acode}</div>
+                    <div>
+                      {selectedFlights[1]?.Departure_location}{" "}
+                      {selectedFlights[1]?.D_acode}
+                    </div>
                     <BiSolidPlaneTakeOff />
-                    <div>{selectedFlights[1]?.Arrive_location} {selectedFlights[1]?.A_acode}</div>
-                    <div>{formatDate(selectedFlights[1]?.Arrive_date)} ~ {formatDate(selectedFlights[1]?.Departure_date)}</div>
+                    <div>
+                      {selectedFlights[1]?.Arrive_location}{" "}
+                      {selectedFlights[1]?.A_acode}
+                    </div>
+                    <div>
+                      {formatDate(selectedFlights[1]?.Arrive_date)} ~{" "}
+                      {formatDate(selectedFlights[1]?.Departure_date)}
+                    </div>
                   </div>
                 </div>
               </div>
             </article>
-
           )}
 
           <article className="payment-agreement-bottom">
@@ -213,20 +270,23 @@ export default function BookingPayment() {
                 </tr>
               </thead>
               <tbody>
-                {passengers && passengers.map((passenger, index) => {
-                  const age = calculateAge(passenger.birth);
-                  return (
-                    <tr key={index}>
-                      <td>{passenger.kname_first}{passenger.kname_last}</td>
-                      <td>{age >= 19 ? "성인" : "소아"}</td>
-                      <td>{passenger.gender}</td>
-                      <td>{passenger.birth}</td>
-                      <td>{passenger.country}</td>
-                    </tr>
-                  );
-                })}
+                {passengers &&
+                  passengers.map((passenger, index) => {
+                    const age = calculateAge(passenger.birth);
+                    return (
+                      <tr key={index}>
+                        <td>
+                          {passenger.kname_first}
+                          {passenger.kname_last}
+                        </td>
+                        <td>{age >= 19 ? "성인" : "소아"}</td>
+                        <td>{passenger.gender}</td>
+                        <td>{passenger.birth}</td>
+                        <td>{passenger.country}</td>
+                      </tr>
+                    );
+                  })}
               </tbody>
-
             </table>
           </article>
         </section>
@@ -289,7 +349,9 @@ export default function BookingPayment() {
                       <li
                         key={index}
                         className={
-                          openStates.segment1 ? "payment-table-text" : "payment-table-hide"
+                          openStates.segment1
+                            ? "payment-table-text"
+                            : "payment-table-hide"
                         }
                       >
                         <span>구간1</span>
@@ -338,15 +400,27 @@ export default function BookingPayment() {
                       <span>구간2</span>
                       <span>
                         KRW&nbsp;
-                        {(backTicketPrice * 0.75 * passengers.length).toLocaleString()}
+                        {(
+                          backTicketPrice *
+                          0.75 *
+                          passengers.length
+                        ).toLocaleString()}
                       </span>
                       <span>
                         KRW&nbsp;
-                        {(backTicketPrice * 0.15 * passengers.length).toLocaleString()}
+                        {(
+                          backTicketPrice *
+                          0.15 *
+                          passengers.length
+                        ).toLocaleString()}
                       </span>
                       <span>
                         KRW&nbsp;
-                        {(backTicketPrice * 0.1 * passengers.length).toLocaleString()}
+                        {(
+                          backTicketPrice *
+                          0.1 *
+                          passengers.length
+                        ).toLocaleString()}
                       </span>
                       <span>
                         KRW&nbsp;
@@ -375,9 +449,7 @@ export default function BookingPayment() {
                             <span>
                               KRW {(backTicketPrice * 0.1).toLocaleString()}
                             </span>
-                            <span>
-                              KRW {backTicketPrice.toLocaleString()}
-                            </span>
+                            <span>KRW {backTicketPrice.toLocaleString()}</span>
                           </li>
                         ))}
                     </ul>
@@ -393,9 +465,13 @@ export default function BookingPayment() {
                 <span>
                   KRW&nbsp;
                   {(
-                    (resevationType === "oneWay" ? ticketPrice : goTicketPrice) *
-                    passengers.length +
-                    (resevationType === "roundTrip" ? backTicketPrice * passengers.length : 0)
+                    (resevationType === "oneWay"
+                      ? ticketPrice
+                      : goTicketPrice) *
+                      passengers.length +
+                    (resevationType === "roundTrip"
+                      ? backTicketPrice * passengers.length
+                      : 0)
                   ).toLocaleString()}
                 </span>
               </li>
@@ -477,17 +553,18 @@ export default function BookingPayment() {
           </article>
         </section>
 
-
         {/* 이용약관 규정 */}
         <section className="booking-payment-section payment-bottom">
-          <BookingPaymentAgree openStates={openStates} setOpenStates={setOpenStates} />
+          <BookingPaymentAgree
+            openStates={openStates}
+            setOpenStates={setOpenStates}
+          />
         </section>
         {/* 결제하기  */}
         <div className="order-button" onClick={orderClick}>
           <button>결제진행</button>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
-

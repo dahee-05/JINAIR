@@ -1,10 +1,8 @@
-
-
-import { db } from './db.js'
+import { db } from "./db.js";
 
 /************************************
  *       회원정보 불러오기
-************************************/
+ ************************************/
 export const getMyInfo = async (data) => {
   const sql = `select id,
 		password,
@@ -23,15 +21,14 @@ export const getMyInfo = async (data) => {
         country,
         nationality
 		from customer 
-    where id = ?`
+    where id = ?`;
   const [result] = await db.execute(sql, [data.id]);
   return { result_rows: result };
 };
 
-
 /************************************
  *       회원정보 수정
-************************************/
+ ************************************/
 export const updateMyInfo = async (data) => {
   const sql = `
     UPDATE customer SET 
@@ -46,7 +43,6 @@ export const updateMyInfo = async (data) => {
     WHERE id = ?
   `;
 
-
   const values = [
     data.email ?? null,
     data.phone ?? null,
@@ -56,32 +52,29 @@ export const updateMyInfo = async (data) => {
     data.address ?? null,
     data.detail_address ?? null,
     data.password ?? null,
-    data.id ?? null
+    data.id ?? null,
   ];
 
   await db.execute(sql, values);
 
-  const [result] = await db.execute(`SELECT * FROM customer WHERE id = ?`, [data.id]);
+  const [result] = await db.execute(`SELECT * FROM customer WHERE id = ?`, [
+    data.id,
+  ]);
   return result[0];
 };
 
-
-
 /************************************
- *       비밀번호 체크 
-************************************/
+ *       비밀번호 체크
+ ************************************/
 export const checkPwd = async (id, password) => {
   const sql = `SELECT password FROM customer WHERE id = ?`;
   const [rows] = await db.execute(sql, [id]);
   return rows.length > 0 && rows[0].password === password;
 };
 
-
-
 /************************************
  *      나의 예약 불러오기
-************************************/
-
+ ************************************/
 
 export const getMyRes = async ({ id }) => {
   const sql = `
@@ -121,22 +114,19 @@ export const getMyRes = async ({ id }) => {
   return grouped;
 };
 
-
-
 /************************************
  *       관심 지역 불러오기
-************************************/
+ ************************************/
 
 export const getInterest = async ({ id }) => {
-  const sql = `select interest_area from customer where id = ?`
+  const sql = `select interest_area from customer where id = ?`;
   const [result] = await db.execute(sql, [id]);
-  return result
+  return result;
 };
-
 
 /************************************
  *        관심지역 추가하기
-************************************/
+ ************************************/
 export const updateInterest = async ({ id, checkList }) => {
   const sql = `UPDATE customer SET interest_area = ? WHERE id = ?`;
   const values = [JSON.stringify(checkList), id];
@@ -145,12 +135,9 @@ export const updateInterest = async ({ id, checkList }) => {
   return result;
 };
 
-
-
 /************************************
  *        나의 사용가능 쿠폰 조회
-************************************/
-
+ ************************************/
 
 export const getMyCoupon = async ({ id }) => {
   const sql = `select * from coupon where id = ? and used = 0`;
@@ -159,10 +146,9 @@ export const getMyCoupon = async ({ id }) => {
   return result;
 };
 
-
 /************************************
  *      나의 쿠폰 카운트
-************************************/
+ ************************************/
 
 export const couponCount = async ({ id }) => {
   const sql = `
@@ -174,26 +160,24 @@ export const couponCount = async ({ id }) => {
   return result;
 };
 
-
 /************************************
  *      나의 쿠폰 사용 (특정 쿠폰)
-************************************/
+ ************************************/
 
 export const applyCoupon = async ({ id, couponCode }) => {
   const sql = `
   UPDATE coupon
     SET used = 1
-    WHERE id = ? AND coupon_code = ? `
+    WHERE id = ? AND coupon_code = ? `;
 
   const [result] = await db.execute(sql, [id, couponCode]);
 
   return result;
 };
 
-
 /************************************
  *    테마별 항공권 가져오기
-************************************/
+ ************************************/
 
 export const customTheme = async ({ category }) => {
   const sql = `
@@ -218,14 +202,11 @@ export const customTheme = async ({ category }) => {
   return result;
 };
 
-
 /*******************************************************************
  * 유저가 설정한 관심지역 항공권 리스트 가져오기
  * 유저 관심지역이 국가명으로만 저장되므로 여기서 도착지 공항코드로 매핑함
-********************************************************************/
+ ********************************************************************/
 export const customArea = async ({ id }) => {
-
-
   // 관심지역 먼저 불러오기 (위의 관심 지역 기존 로직 재사용)
   const [row] = await getInterest({ id });
   const interest = row?.interest_area || [];
@@ -233,24 +214,24 @@ export const customArea = async ({ id }) => {
 
   //관심지역에 해당하는 지역 공항코드
   const areaList = {
-    "일본": ["FUK", "ISG", "KKJ", "NGO", "OKA", "KIX", "CTS", "TAK", "NRT"],
-    "중국": ["PVG", "CGO"],
-    "홍콩": ["HKG"],
-    "마카오": ["MFM"],
-    "대만": ["RMQ", "TPE"],
-    "베트남": ["DAD", "CXR", "PQC"],
-    "말레이시아": ["BKI"],
-    "필리핀": ["TAG", "CEB", "CRK"],
-    "괌": ["GUM"],
-    "태국": ["BKK", "HKT"]
+    일본: ["FUK", "ISG", "KKJ", "NGO", "OKA", "KIX", "CTS", "TAK", "NRT"],
+    중국: ["PVG", "CGO"],
+    홍콩: ["HKG"],
+    마카오: ["MFM"],
+    대만: ["RMQ", "TPE"],
+    베트남: ["DAD", "CXR", "PQC"],
+    말레이시아: ["BKI"],
+    필리핀: ["TAG", "CEB", "CRK"],
+    괌: ["GUM"],
+    태국: ["BKK", "HKT"],
   };
 
   // 관심국가를 A_acode(도착지 공항코드) 목록으로 변환
-  const acodeList = interest.flatMap(country => areaList[country] || []);
+  const acodeList = interest.flatMap((country) => areaList[country] || []);
   if (!acodeList.length) return [];
 
   // A_acode(도착지 공항코드)에 해당하는 항공편 정보 조회
-  const questionMarks = acodeList.map(() => '?').join(',');
+  const questionMarks = acodeList.map(() => "?").join(",");
 
   const sql = `
     SELECT  
@@ -271,18 +252,15 @@ export const customArea = async ({ id }) => {
   return result;
 };
 
-
-
 /************************************
  *        나의 사용가능 쿠폰 조회
-************************************/
-
+ ************************************/
 
 export const getMyQna = async ({ id }) => {
   const sql = `SELECT TITLE, CONTENT, REG_DATE, 
     category, comment, adminTitle, adminContent, customer_id AS id,
      (
-    SELECT CONCAT('http://localhost:9000', jt.img)
+    SELECT CONCAT('http://localhost:9000/', jt.img)
     FROM JSON_TABLE(
       JSON_UNQUOTE(qnaImg->>'$[0]'),
       '$[*]' COLUMNS (
@@ -296,5 +274,4 @@ WHERE customer_id = ? `;
   const [result] = await db.execute(sql, [id]);
 
   return result;
-
 };
